@@ -1,0 +1,31 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+id:
+  library: libdefault
+  name: generic_peripheral
+  vendor: vendor
+
+clocks:
+  peripheral:
+    signal: clk
+
+resets:
+  peripheral:
+    signal: rst_l
+    polarity: active low
+
+interfaces:
+  gif_dst:
+    mode: subordinate
+    clock: peripheral
+    reset: peripheral
+    type:
+      name: generic_if
+
+signals:
+  in:
+  - {name: clk}
+  - {name: rst_l}
+  - {name: config_in}
+

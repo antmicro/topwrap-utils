@@ -1,0 +1,37 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+id:
+  library: libdefault
+  name: generic_bridge
+  vendor: vendor
+
+clocks:
+  bridge:
+    signal: clk
+
+resets:
+  bridge:
+    signal: rst_l
+    polarity: active low
+
+interfaces:
+  gif_src:
+    mode: manager
+    clock: bridge
+    reset: bridge
+    type:
+      name: generic_if
+
+  axi:
+    mode: subordinate
+    clock: bridge
+    reset: bridge
+    type:
+      name: AXI4
+
+signals:
+  in:
+  - {name: clk}
+  - {name: rst_l}
+

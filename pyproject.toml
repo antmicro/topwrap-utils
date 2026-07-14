@@ -1,0 +1,49 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+[project]
+name = "renode_plugin"
+version = "0.1.0"
+description = "A plugin for generating .repl files from a topwrap design"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "topwrap @ git+https://github.com/antmicro/topwrap.git"
+]
+
+[project.entry-points."topwrap.plugins"]
+renode_plugin = "renode_plugin.main:RenodePeripheralGen"
+
+[tool.setuptools]
+packages = ["renode_plugin"]
+
+[project.optional-dependencies]
+lint = [
+  "codespell==2.3.0",
+  "ruff==0.12.1"
+]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = [
+  "__pycache__",
+  ".venv",
+  "uv.lock"
+]
+
+[tool.ruff.lint]
+select = [
+  "B",
+  "C9",
+  "E",
+  "F",
+  "I",
+  "W",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.codespell]
+skip = "build,.venv,.git,__pycache__,uv.lock"
+ignore-words-list = "inout, inouts"

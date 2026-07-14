@@ -1,0 +1,91 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+name: example-ic-network
+
+clock_domains:
+  default:
+    signal: clk_i
+
+reset_domains:
+  default:
+    signal: rst_ni
+    polarity: active low
+
+external:
+  ports:
+    in:
+    - clk_i
+    - rst_ni
+
+connections:
+  interfaces:
+    peripheral0:
+      gif_dst: [bridge0, gif_src]
+    peripheral1:
+      gif_dst: [bridge1, gif_src]
+
+  ports:
+    peripheral0:
+      config_in: 1234
+    peripheral1:
+      config_in: 4321
+
+interconnects:
+  con0:
+    type: AXI
+    reset: rst_ni
+    clock: clk_i
+    params:
+      atop: False
+    memory_map: mmap0
+    managers:
+      core0:
+        ifu_axi:
+          id_width: 3
+
+memory_maps:
+  mmap0:
+    bridge0:
+      axi:
+        address: 0x30000000
+        size: 0x1000
+    bridge1:
+      axi:
+        address: 0x30001000
+        size: 0x1000
+
+ips:
+  core0:
+    file: repo[repo]:generic_core
+  peripheral0:
+    file: repo[repo]:generic_peripheral
+  peripheral1:
+    file: repo[repo]:generic_peripheral
+  bridge0:
+    file: repo[repo]:generic_bridge
+  bridge1:
+    file: repo[repo]:generic_bridge
+
+extensions:
+  renode_peripheral_gen:
+    supported_peripherals:
+      - target:
+          name: generic_core
+          vendor: vendor
+          library: libdefault
+        renode_device: "CPU.BaseCPU"
+      - target:
+          name: generic_peripheral
+          vendor: vendor
+          library: libdefault
+        renode_device: "Peripheral.BaseDevice"
+        map:
+          - dest: "size"
+            src: ".memory_map.size"
+          - dest: "config"
+            src: ".connections.config_in"
+    output:
+      - filename: "output.repl"
+        filter: ["*"]
+

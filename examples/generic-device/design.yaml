@@ -1,0 +1,48 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+name: example-generic-device
+
+clock_domains:
+  default:
+    signal: clk_i
+
+reset_domains:
+  default:
+    signal: rst_ni
+    polarity: active low
+
+external:
+  ports:
+    in:
+    - clk_i
+    - rst_ni
+
+interconnects:
+  con0:
+    type: AXI
+    reset: rst_ni
+    clock: clk_i
+    params:
+      atop: False
+    managers:
+      core0:
+        ifu_axi:
+          id_width: 3
+
+ips:
+  core0:
+    file: repo[repo]:generic_core
+
+extensions:
+  renode_peripheral_gen:
+    supported_peripherals:
+      - target:
+          name: generic_core
+          vendor: vendor
+          library: libdefault
+        renode_device: "CPU.BaseCPU"
+    output:
+      - filename: "output.repl"
+        filter: ["*"]
+
