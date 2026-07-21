@@ -22,21 +22,24 @@ install-debian-deps docs="0":
 
 # Run all configured linting checks.
 test-lint:
-	#!/usr/bin/env bash
-	uv sync --extra lint
-	# uv run pre-commit run check-yaml-extension --all-files
-	uv run ruff format --check
-	uv run ruff check
-	uv run codespell
+    #!/usr/bin/env bash
+    set -Eeuo pipefail
+    uv sync --extra lint
+    # uv run pre-commit run check-yaml-extension --all-files
+    uv run ruff format --check
+    uv run ruff check
+    uv run codespell
 
 examples:
     #!/usr/bin/env bash
+    set -Eeuo pipefail
     uv sync
     uv pip install .
     uv run make -C examples -B
 
 docs:
   #!/usr/bin/env bash
+  set -Eeuo pipefail
   cd docs/
   python3 -m venv .venv/
   source .venv/bin/activate

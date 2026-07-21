@@ -26,13 +26,13 @@ The plugin is automatically invoked by Topwrap's plugin manager during the build
 
 ### Example
 
-The [examples directory](https://github.com/antmicro/topwrap-plugins/tree/main/renode_plugin/examples) contain example designs and makefiles for building them. Assuming you have an existing Topwrap design with all Renode metadata filled in, the following commands would create REPL-files as an artifact while building the top-level design:
+The [examples directory](https://github.com/antmicro/topwrap-utils/tree/main/topwrap-renode-plugin/examples) contain example designs and makefiles for building them. Assuming you have an existing Topwrap design with all Renode metadata filled in, the following commands would create REPL-files as an artifact while building the top-level design:
 
 ```bash
 cd path/to/project # contains topwrap.yaml and design description
 uv venv
 uv pip install "topwrap @ git+https://github.com/antmicro/topwrap"
-uv pip install "topwrap-renode-plugin @ git+https://github.com/antmicro/topwrap-cores.git@renode-plugin#subdirectory=topwrap-renode-plugin"
+uv pip install "topwrap-renode-plugin @ git+https://github.com/antmicro/topwrap-utils.git#subdirectory=topwrap-renode-plugin"
 uv run topwrap build -d . -b build
 ```
 

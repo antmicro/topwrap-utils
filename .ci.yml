@@ -17,13 +17,15 @@ variables:
   SCALENODE_CPU: 1
   SCALENODE_DISK: 5
 
-lint:
+# Renode plugin
+renode_plugin_lint:
   <<: *common_only
   script:
+    - cd topwrap-renode-plugin
     - just install-debian-deps
     - just test-lint
 
-build_docs:
+renode_plugin_build_docs:
   <<: *common_only
   stage: docs
   variables:
@@ -32,6 +34,7 @@ build_docs:
     SCALENODE_DISK: 20
   tags: [docs]
   script:
+    - cd topwrap-renode-plugin
     - just install-debian-deps --docs
     - just docs
     - tar cf "$CI_DOCS_ARCHIVE" -C docs/build/html/ .
@@ -40,9 +43,10 @@ build_docs:
       - docs/build
       - $CI_DOCS_ARCHIVE
 
-examples:
+renode_plugin_examples:
   <<: *common_only
   script:
+    - cd topwrap-renode-plugin
     - just install-debian-deps
     - just examples
   artifacts:
