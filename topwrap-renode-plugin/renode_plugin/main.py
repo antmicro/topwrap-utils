@@ -23,8 +23,9 @@ from topwrap.model.interconnect import (
     InterconnectSubordinateParams,
 )
 from topwrap.model.misc import Identifier, ObjectId, VariableName
+from topwrap.model.module import Module
 from topwrap.plugin.base import BasePlugin, BuildContext
-from typing_extensions import Any, Callable, Iterable, Union, cast
+from typing_extensions import Any, Callable, Iterable, Optional, Union, cast
 
 logger = logging.getLogger(__name__)
 
@@ -412,35 +413,18 @@ def resolve_memorymap(
     return mm
 
 
-def create_resolvers(mod: Design) -> list[RenodeDeviceFieldResolve]:
-    metadata = mod.extensions.find_by_name_or_error("renode_peripheral_gen")
-
-    data = metadata.data
-
-    if not isinstance(data, dict):
-        logging.error("renode_peripheral_gen has to be a dictionary")
+def _parse_supported_peripheral(
+    peripheral: Any, ident: Optional[Identifier] = None
+) -> RenodeDeviceFieldResolve:
+    if not isinstance(peripheral, dict):
+        logging.error("supported_peripherals has to be a dictionary")
         exit(1)
-    if "supported_peripherals" not in data:
-        return []
+    peripheral = cast(dict[str, Any], peripheral)
 
-    supported_peripherals = cast(dict[str, Any], data)["supported_peripherals"]
-    if not isinstance(supported_peripherals, list):
-        logging.error("supported_peripherals has to be a list")
-        exit(1)
-
-    resolvers = []
-
-    for peripheral in supported_peripherals:
-        if not isinstance(peripheral, dict):
-            logging.error("renode_peripheral_gen.supported_peripherals[*] has to be a dictionary")
-            exit(1)
-        peripheral = cast(dict[str, Any], peripheral)
-
+    if ident is None:
         target = peripheral["target"]
         if not isinstance(target, dict):
-            logging.error(
-                "renode_peripheral_gen.supported_peripherals[*].target has to be a dictionary"
-            )
+            logging.error("supported_peripherals.target has to be a dictionary")
             exit(1)
         target = cast(dict[str, str], target)
 
@@ -465,31 +449,64 @@ def create_resolvers(mod: Design) -> list[RenodeDeviceFieldResolve]:
             exit(1)
 
         ident = Identifier(**target)
-        renode_device = peripheral["renode_device"]
+    renode_device = peripheral["renode_device"]
 
-        device_resolver = RenodeDeviceFieldResolve(ident, renode_device)
+    device_resolver = RenodeDeviceFieldResolve(ident, renode_device)
 
-        if "map" not in peripheral:
-            resolvers.append(device_resolver)
-            continue
+    if "map" not in peripheral:
+        return device_resolver
 
-        field_map = peripheral["map"]
-        if not isinstance(field_map, list):
-            logging.error("renode_peripheral_gen.supported_peripherals[*].map has to be a list")
+    field_map = peripheral["map"]
+    if not isinstance(field_map, list):
+        logging.error("renode_peripheral_gen.supported_peripherals[*].map has to be a list")
+        exit(1)
+
+    for field_resolver in field_map:
+        if not isinstance(field_resolver, dict):
+            logging.error(
+                "renode_peripheral_gen.supported_peripherals[*].map[*] has to be a dictionary"
+            )
             exit(1)
+        field_resolver = cast(dict[str, str], field_resolver)
+        dest = field_resolver["dest"]
+        src = field_resolver["src"]
+        device_resolver.add_resolver(FieldResolver.parse(dest, src))
 
-        for field_resolver in field_map:
-            if not isinstance(field_resolver, dict):
-                logging.error(
-                    "renode_peripheral_gen.supported_peripherals[*].map[*] has to be a dictionary"
-                )
-                exit(1)
-            field_resolver = cast(dict[str, str], field_resolver)
-            dest = field_resolver["dest"]
-            src = field_resolver["src"]
-            device_resolver.add_resolver(FieldResolver.parse(dest, src))
+    return device_resolver
 
-        resolvers.append(device_resolver)
+
+def create_resolvers_mod(mod: Module) -> Optional[RenodeDeviceFieldResolve]:
+    metadata = mod.extensions.find_by_name("renode_peripheral_gen")
+
+    if metadata is None:
+        return None
+
+    return _parse_supported_peripheral(metadata.data, mod.id)
+
+
+def create_resolvers(mod: Design) -> list[RenodeDeviceFieldResolve]:
+    metadata = mod.extensions.find_by_name("renode_peripheral_gen")
+
+    if metadata is None:
+        return []
+
+    data = metadata.data
+
+    if not isinstance(data, dict):
+        logging.error("renode_peripheral_gen has to be a dictionary")
+        exit(1)
+    if "supported_peripherals" not in data:
+        return []
+
+    supported_peripherals = cast(dict[str, Any], data)["supported_peripherals"]
+    if not isinstance(supported_peripherals, list):
+        logging.error("supported_peripherals has to be a list")
+        exit(1)
+
+    resolvers = []
+
+    for peripheral in supported_peripherals:
+        resolvers.append(_parse_supported_peripheral(peripheral))
     return resolvers
 
 
@@ -549,7 +566,10 @@ class OutputMap:
 
 
 def parse_output_maps(des: Design) -> list[OutputMap]:
-    metadata = des.extensions.find_by_name_or_error("renode_peripheral_gen")
+    metadata = des.extensions.find_by_name("renode_peripheral_gen")
+
+    if metadata is None:
+        return [OutputMap("platform.repl", None, [])]
 
     data = metadata.data
 
@@ -664,13 +684,30 @@ class RenodePeripheralGen(BasePlugin):
             logging.error("expected top-level design")
             exit(1)
 
+        resolvers: dict[str, RenodeDeviceFieldResolve] = {}
+
+        for mod in ctx.repo_modules:
+            res = create_resolvers_mod(mod)
+            if res:
+                module_id = res.get_module_id().combined()
+                if module_id in resolvers:
+                    logging.error(
+                        "internal error, duplicate modules encountered when creating resolvers"
+                    )
+                    exit(1)
+                resolvers[module_id] = res
+
         top_design = cast(Design, top_module.design)
 
         output_maps = parse_output_maps(top_design)
 
-        resolvers = create_resolvers(top_design)
+        for resolver in create_resolvers(top_design):
+            module_id = resolver.get_module_id().combined()
+            logging.info(f"top level design overrides resolver for {module_id}")
+            resolvers[module_id] = resolver
 
-        renode_mapping = RenodeMapping.create_mapping(resolvers, top_design)
+        resolver_list = list(resolvers.values())
+        renode_mapping = RenodeMapping.create_mapping(resolver_list, top_design)
 
         memory_map = resolve_memorymap(top_design, renode_mapping)
 

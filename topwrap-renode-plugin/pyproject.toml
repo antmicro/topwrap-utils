@@ -1,6 +1,10 @@
 # Copyright (c) 2026 Antmicro <www.antmicro.com>
 # SPDX-License-Identifier: Apache-2.0
 
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "renode_plugin"
 version = "0.1.0"
@@ -12,7 +16,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "55a5358d05463dfd6ea3696c9f398154e5dcfbca" }
+topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "24f3c62fab5216507d7209dc17005b6bc88019a0" }
 
 [project.entry-points."topwrap.plugins"]
 renode_plugin = "renode_plugin.main:RenodePeripheralGen"
@@ -50,3 +54,4 @@ max-complexity = 18
 [tool.codespell]
 skip = "build,.venv,.git,__pycache__,uv.lock"
 ignore-words-list = "inout, inouts"
+

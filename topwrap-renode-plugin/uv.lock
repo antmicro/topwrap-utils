@@ -247,6 +247,14 @@ wheels = [
 ]
 
 [[package]]
+name = "axi-interconnect-generator-plugin"
+version = "0.0.1"
+source = { git = "https://github.com/antmicro/topwrap-utils?subdirectory=topwrap-axi-interconnect-generator-plugin&rev=949dd6b39c188a5063e05d90de74ef8a2666c369#949dd6b39c188a5063e05d90de74ef8a2666c369" }
+dependencies = [
+    { name = "pyyaml" },
+]
+
+[[package]]
 name = "beautifulsoup4"
 version = "4.12.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1716,7 +1724,7 @@ wheels = [
 [[package]]
 name = "renode-plugin"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "topwrap" },
 ]
@@ -1731,7 +1739,7 @@ lint = [
 requires-dist = [
     { name = "codespell", marker = "extra == 'lint'", specifier = "==2.3.0" },
     { name = "ruff", marker = "extra == 'lint'", specifier = "==0.12.1" },
-    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=55a5358d05463dfd6ea3696c9f398154e5dcfbca" },
+    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=24f3c62fab5216507d7209dc17005b6bc88019a0" },
 ]
 provides-extras = ["lint"]
 
@@ -2169,11 +2177,12 @@ wheels = [
 [[package]]
 name = "topwrap"
 version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap.git?rev=55a5358d05463dfd6ea3696c9f398154e5dcfbca#55a5358d05463dfd6ea3696c9f398154e5dcfbca" }
+source = { git = "https://github.com/antmicro/topwrap.git?rev=24f3c62fab5216507d7209dc17005b6bc88019a0#24f3c62fab5216507d7209dc17005b6bc88019a0" }
 dependencies = [
     { name = "amaranth" },
     { name = "amaranth-soc" },
     { name = "amaranth-yosys" },
+    { name = "axi-interconnect-generator-plugin" },
     { name = "cyclopts" },
     { name = "marshmallow" },
     { name = "marshmallow-dataclass" },
@@ -2183,23 +2192,14 @@ dependencies = [
     { name = "pyslang" },
     { name = "pyyaml" },
     { name = "simpleeval" },
-    { name = "topwrap-axi-core-plugin" },
     { name = "topwrap-ipxact-parser" },
     { name = "typing-extensions" },
 ]
 
 [[package]]
-name = "topwrap-axi-core-plugin"
-version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap-cores?subdirectory=cores%2Ftopwrap_axi_core_plugin&rev=f0a60c40291158495891bc49d90efa342da8d174#f0a60c40291158495891bc49d90efa342da8d174" }
-dependencies = [
-    { name = "pyyaml" },
-]
-
-[[package]]
 name = "topwrap-ipxact-parser"
 version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap-cores?subdirectory=topwrap-ipxact-parser&rev=f0a60c40291158495891bc49d90efa342da8d174#f0a60c40291158495891bc49d90efa342da8d174" }
+source = { git = "https://github.com/antmicro/topwrap-utils?subdirectory=topwrap-ipxact-parser&rev=949dd6b39c188a5063e05d90de74ef8a2666c369#949dd6b39c188a5063e05d90de74ef8a2666c369" }
 dependencies = [
     { name = "lxml" },
     { name = "six" },

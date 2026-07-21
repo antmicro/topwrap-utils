@@ -1,38 +1,54 @@
 # Syntax
 
-To support automating the creation of REPL's, new metadata needs to be assigned to the Topwrap design YAML.
+To support automating the creation of REPL's, metadata needs to exist in the IP-cores or the design YAML.
 The metadata tells the plugin how to map relevant aspects of the design to the configuration settings of Renode's peripherals.
 
 ## Overview
 
-Here's a quick overview of how the metadata is specified in the design YAML:
+Here's a quick overview of how the metadata is specified in the IP-core YAML:
+
+```yaml
+# ...
+extensions:                 # The "extensions" tag
+  renode_peripheral_gen:    # Metadata field for this plugin
+    renode_device: "..."    # The name of the Renode peripheral (required)
+    map:                    # Mapping between the peripheral's configuration 
+                            # fields and properties of the instantiated
+                            # ip-core (optional)
+      - dest: "..."         #  Renode-peripheral config
+        src: "..."          #  Topwrap design property
+```
+
+In the design YAML, you have the *option* to configure the output artifacts.
+It's also possible to override the Renode-peripheral mapping from the IP-cores's modules. 
+In those scenarios, you have to target any IP-core by it's module ID.
 
 ```yaml
 # ... 
 extensions:                     # The "extensions" tag
   renode_peripheral_gen:        # Metadata field for this plugin
-    supported_peripherals:      # List of "IP-core to Renode peripheral"-mappings
-      - target:                 # Fully qualified module ID
+    supported_peripherals:      # List of "IP-core to Renode peripheral"-mappings (optional)
+      - target:                 # Fully qualified module ID (required)
           name: "..."
           vendor: "..."
           library: "..."
-        renode_device: "..."    # The name of the Renode peripheral
+        renode_device: "..."    # The name of the Renode peripheral (required)
         map:                    # Mapping between the peripheral's configuration
                                 # fields and properties of the instantiated
-                                # ip-core
+                                # ip-core (optional)
           - dest: "..."         #  Renode-peripheral config
             src: "..."          #  Topwrap design property
-    output:                     # A list of configuration files to generate
+    output:                     # A list of configuration files to generate (optional)
       - filename: "..."         #  Output file name
         filter: []              #  IP-cores to include
         includes: []            #  List of other .repl files to include
 ```
 
+
 ## Plugin metadata
 
 Topwrap supports adding non-standard metadata to the design description.
 The metadata for this plugin is placed under `extensions.renode_peripheral_gen`.
-Two settings need to be specified: the [`supported_peripherals`](#syntax-of-mapping) and the [`output`](#output).
 
 ## Syntax of mapping
 
@@ -52,11 +68,13 @@ If the IP-core is not directly connected to the interconnect where this memory m
 
 ## Output
 
-It can be relevant to output sub-sets of the design into different platform description files.
+It can be relevant to output sub-sets of the design into different REPL's.
 To support this, several outputs can be configured via the `output` key.
 In addition to the `filename`-key, the `filter`-key can be used to select which instantiated IP-cores should be output.
 The filter is specified as a sequence of rules (see [rule syntax](#rule-syntax)), applied in order.
 If the platform description depends on other files, their paths can be imported via the `includes` keyword.
+
+If no `output` is specified, the default output `platform.repl` containing all peripherals will be output.
 
 ### Rule syntax
 
