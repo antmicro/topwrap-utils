@@ -17,6 +17,14 @@ variables:
   SCALENODE_CPU: 1
   SCALENODE_DISK: 5
 
+# IPXACT Parser
+ipxact_example:
+  <<: *common_only
+  script:
+    - cd topwrap-ipxact-parser
+    - just install-debian-deps
+    - just example
+
 # Renode plugin
 renode_plugin_lint:
   <<: *common_only

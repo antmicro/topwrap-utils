@@ -1,0 +1,80 @@
+From ec3dbf156f4f16d2eb14a5656c3f0958f1e2987a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Wojciech=20Ko=C5=82odziej?=
+ <wkolodziej@internships.antmicro.com>
+Date: Wed, 17 Jun 2026 09:49:04 +0200
+Subject: [PATCH] Add --no-pattern-validator flag
+
+When schema contains pattern that isn't supported by python `re`, this
+flag can be used.
+---
+ generateDS.py | 19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
+
+diff --git a/generateDS.py b/generateDS.py
+index eeb86f5..d9d232a 100755
+--- a/generateDS.py
++++ b/generateDS.py
+@@ -156,6 +156,7 @@ Options:
+     -q, --no-questions       Do not ask questions, for example,
+                              force overwrite.
+     --no-warnings            Do not print warning messages.
++    --no-pattern-validator   Do not generate pattern validator from xs:pattern
+     --session=mysession.session
+                              Load and use options from session file. You can
+                              create session file in generateds_gui.py.  Or,
+@@ -365,6 +366,7 @@ OutputDirectory = None
+ ModuleSuffix = ""
+ PreserveCdataTags = False
+ NoWarnings = False
++NoPatternValidator = False
+ 
+ SchemaToPythonTypeMap = {}
+ 
+@@ -7943,11 +7945,13 @@ def processValidatorBodyRestrictions(
+     for restriction in restrictions:
+         #
+         # pattern
+-        pats1 = restriction.xpath("./xs:pattern/@value", namespaces=ns)
+-        if pats1:
+-            # pats2 = [u'^{}$'.format(replaceVbars(p1)) for p1 in pats1]
+-            pats2 = ["^({})$".format(replaceBlockNames(p1)) for p1 in pats1]
+-            patterns1.append(pats2)
++        # When schema contains patterns that aren't supported by python re library
++        global NoPatternValidator
++        if not NoPatternValidator:
++            pats1 = restriction.xpath("./xs:pattern/@value", namespaces=ns)
++            if pats1:
++                pats2 = ["^({})$".format(replaceBlockNames(p1)) for p1 in pats1]
++                patterns1.append(pats2)
+         #
+         # Check for and generate code for each possible type of restriction.
+         #
+@@ -12584,7 +12588,7 @@ def main():
+         NoWarnings, AlwaysExportDefault, \
+         UppercaseEnums, CreateMandatoryChildren, \
+         GDSImportPath, NamespaceToCustomImportPath, \
+-        UseRegexModule
++        UseRegexModule, NoPatternValidator
+     outputText = True
+     args = sys.argv[1:]
+     try:
+@@ -12623,6 +12627,7 @@ def main():
+                 "disable-generatedssuper-lookup",
+                 "use-source-file-as-module-name",
+                 "no-warnings",
++                "no-pattern-validator",
+                 "no-collect-includes",
+                 "no-redefine-groups",
+                 "always-export-default",
+@@ -12877,6 +12882,8 @@ def main():
+             CleanupNameList = capture_cleanup_name_list(option[1])
+         elif option[0] == "--no-warnings":
+             NoWarnings = True
++        elif option[0] == '--no-pattern-validator':
++            NoPatternValidator = True
+         elif option[0] == "--no-collect-includes":
+             noCollectIncludes = True
+         elif option[0] == "--no-redefine-groups":
+-- 
+2.47.3
+

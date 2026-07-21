@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topwrap-ipxact-parser"
+version = "0.0.1"
+requires-python = ">=3.9"
+authors = [{name = "Antmicro"}]
+description = "Generated IEEE 1685-2022 (IP-XACT) XML schema bindings"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "lxml>=4.9,<7",
+  "six",
+]
+
+[tool.setuptools.packages.find]
+include = ["topwrap_ipxact_parser*"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["topwrap_ipxact_parser/__init__.py"]

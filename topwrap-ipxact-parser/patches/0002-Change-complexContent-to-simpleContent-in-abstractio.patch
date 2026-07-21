@@ -1,0 +1,36 @@
+From a60064cf14e0bcc5d9d43e635819a6dd0dfcedd6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Wojciech=20Ko=C5=82odziej?=
+ <wkolodziej@internships.antmicro.com>
+Date: Wed, 17 Jun 2026 08:30:13 +0200
+Subject: [PATCH] Change complexContent to simpleContent in
+ abstractionDefinition.xsd
+
+---
+ ieee-1685-2022/abstractionDefinition.xsd | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/ieee-1685-2022/abstractionDefinition.xsd b/ieee-1685-2022/abstractionDefinition.xsd
+index 5b85e0e..83bfb9f 100644
+--- a/ieee-1685-2022/abstractionDefinition.xsd
++++ b/ieee-1685-2022/abstractionDefinition.xsd
+@@ -85,7 +85,7 @@
+ 					<xs:documentation>Number of bits required to represent this port. Absence of this element indicates unconstrained number of bits, i.e. the component will define the number of bits in this port. The logical numbering of the port starts at 0 to width-1.</xs:documentation>
+ 				</xs:annotation>
+ 				<xs:complexType>
+-					<xs:complexContent>
++					<xs:simpleContent>
+ 						<xs:extension base="ipxact:unsignedPositiveIntExpression">
+ 							<xs:attribute name="allBits" type="xs:boolean" default="false">
+ 								<xs:annotation>
+@@ -94,7 +94,7 @@ true: mapping is required  the full width is supposed to be mapped.</xs:document
+ 								</xs:annotation>
+ 							</xs:attribute>
+ 						</xs:extension>
+-					</xs:complexContent>
++					</xs:simpleContent>
+ 				</xs:complexType>
+ 			</xs:element>
+ 			<xs:element name="direction" type="ipxact:direction" default="out" minOccurs="0">
+-- 
+2.47.3
+
