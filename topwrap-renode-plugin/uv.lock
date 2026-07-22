@@ -1731,7 +1731,7 @@ lint = [
 requires-dist = [
     { name = "codespell", marker = "extra == 'lint'", specifier = "==2.3.0" },
     { name = "ruff", marker = "extra == 'lint'", specifier = "==0.12.1" },
-    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git" },
+    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=55a5358d05463dfd6ea3696c9f398154e5dcfbca" },
 ]
 provides-extras = ["lint"]
 
@@ -2169,7 +2169,7 @@ wheels = [
 [[package]]
 name = "topwrap"
 version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap.git#72cf442b149f7545530c3f5d06d6cb2627527aff" }
+source = { git = "https://github.com/antmicro/topwrap.git?rev=55a5358d05463dfd6ea3696c9f398154e5dcfbca#55a5358d05463dfd6ea3696c9f398154e5dcfbca" }
 dependencies = [
     { name = "amaranth" },
     { name = "amaranth-soc" },

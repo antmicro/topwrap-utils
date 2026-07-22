@@ -8,8 +8,11 @@ description = "A plugin for generating .repl files from a topwrap design"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-  "topwrap @ git+https://github.com/antmicro/topwrap.git"
+  "topwrap >=0.0.1"
 ]
+
+[tool.uv.sources]
+topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "55a5358d05463dfd6ea3696c9f398154e5dcfbca" }
 
 [project.entry-points."topwrap.plugins"]
 renode_plugin = "renode_plugin.main:RenodePeripheralGen"
