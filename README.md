@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 [Antmicro](https://www.antmicro.com)
 
-This repository is a collection of utilities (tools or plugins) for topwrap.
+This repository is a collection of utilities (tools or plugins) for [topwrap](https://github.com/antmicro/topwrap).
 Each utility is distributed as a python package.
 
 ## Installation 
