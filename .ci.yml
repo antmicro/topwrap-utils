@@ -25,6 +25,21 @@ ipxact_example:
     - just install-debian-deps
     - just example
 
+# AXI core plugin
+axi_interconnect_generator_example:
+  <<: *common_only
+  script:
+    - cd topwrap-axi-interconnect-generator-plugin
+    - just install-debian-deps
+    - just examples
+
+axi_interconnect_generator_lint:
+  <<: *common_only
+  script:
+    - cd topwrap-axi-interconnect-generator-plugin
+    - just install-debian-deps
+    - just test-lint
+
 # Renode plugin
 renode_plugin_lint:
   <<: *common_only

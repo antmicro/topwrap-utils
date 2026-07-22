@@ -1,0 +1,6 @@
+[submodule "topwrap-axi-interconnect-generator-plugin/axi_interconnect_generator_plugin/third_party/axi"]
+	path = topwrap-axi-interconnect-generator-plugin/axi_interconnect_generator_plugin/third_party/axi
+	url = https://github.com/pulp-platform/axi.git
+[submodule "topwrap-axi-interconnect-generator-plugin/axi_interconnect_generator_plugin/third_party/common_cells"]
+	path = topwrap-axi-interconnect-generator-plugin/axi_interconnect_generator_plugin/third_party/common_cells
+	url = https://github.com/pulp-platform/common_cells.git

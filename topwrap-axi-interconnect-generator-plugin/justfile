@@ -1,0 +1,39 @@
+# UV install path
+export PATH := x"$PATH:$HOME/.local/bin"
+
+default:
+	@just --list
+
+install-debian-deps:
+    #!/usr/bin/env bash
+    apt-get update -qq
+    apt-get install -y --no-install-recommends \
+        curl \
+        git \
+        python3-dev \
+        python3-pip \
+        python3-venv \
+        make
+
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+init-submodules:
+    git submodule update --init
+
+# Run all configured linting checks.
+test-lint: init-submodules
+    #!/usr/bin/env bash
+    set -Eeuo pipefail
+    uv sync --extra lint
+    # uv run pre-commit run check-yaml-extension --all-files
+    uv run ruff format --check
+    uv run ruff check
+    uv run codespell
+
+examples: init-submodules
+    #!/usr/bin/env bash
+    set -Eeuo pipefail
+    uv sync
+    uv pip install .
+    uv run make -C examples -B
+
