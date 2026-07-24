@@ -37,7 +37,8 @@ regenerate:
     pip download generateDS=={{generateds_version}} --no-deps -d .
     unzip -q generateDS-{{generateds_version}}-py3-none-any.whl -d generateDS-{{generateds_version}}
     cd generateDS-{{generateds_version}}/generateDS-{{generateds_version}}.data/scripts && \
-        patch -p1 < {{patches_dir}}/0001-Add-no-pattern-validator-flag.patch
+        patch -p1 < {{patches_dir}}/0001-Add-no-pattern-validator-flag.patch && \
+        patch -p1 < {{patches_dir}}/0004-Fix-Enable-elementFormDefault-to-propagate-namespace.patch
     uv venv --quiet .generate-venv
     uv pip install --quiet --python .generate-venv six lxml "requests>=2.21.0"
     mkdir ipxact-schema

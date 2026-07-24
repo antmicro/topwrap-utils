@@ -33510,7 +33510,7 @@ class mirroredInitiator(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -62808,12 +62808,12 @@ class systemGroupNamesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if systemGroupName is None:
             self.systemGroupName = []
         else:
             self.systemGroupName = systemGroupName
-        self.systemGroupName_nsprefix_ = None
+        self.systemGroupName_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -62972,7 +62972,7 @@ class systemGroupNameType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -63116,16 +63116,16 @@ class choiceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         if enumeration is None:
             self.enumeration = []
         else:
             self.enumeration = enumeration
-        self.enumeration_nsprefix_ = None
+        self.enumeration_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -63328,7 +63328,7 @@ class enumerationType(complexBaseExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("enumerationType"), self).__init__(valueOf_, **kwargs_)
         self.text = _cast(None, text)
         self.text_nsprefix_ = None
@@ -63525,17 +63525,17 @@ class portReferencesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if internalPortReference is None:
             self.internalPortReference = []
         else:
             self.internalPortReference = internalPortReference
-        self.internalPortReference_nsprefix_ = None
+        self.internalPortReference_nsprefix_ = "ipxact"
         if externalPortReference is None:
             self.externalPortReference = []
         else:
             self.externalPortReference = externalPortReference
-        self.externalPortReference_nsprefix_ = None
+        self.externalPortReference_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -63738,7 +63738,7 @@ class internalPortReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.portRef = _cast(None, portRef)
         self.portRef_nsprefix_ = None
         self.componentInstanceRef = _cast(None, componentInstanceRef)
@@ -63749,11 +63749,11 @@ class internalPortReferenceType(GeneratedsSuper):
             self.subPortReference = []
         else:
             self.subPortReference = subPortReference
-        self.subPortReference_nsprefix_ = None
+        self.subPortReference_nsprefix_ = "ipxact"
         self.partSelect = partSelect
-        self.partSelect_nsprefix_ = None
+        self.partSelect_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -64049,12 +64049,12 @@ class excludePortsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if excludePort is None:
             self.excludePort = []
         else:
             self.excludePort = excludePort
-        self.excludePort_nsprefix_ = None
+        self.excludePort_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -64213,7 +64213,7 @@ class excludePortType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -64381,16 +64381,16 @@ class powerDomainLinkType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.externalPowerDomainReference = externalPowerDomainReference
-        self.externalPowerDomainReference_nsprefix_ = None
+        self.externalPowerDomainReference_nsprefix_ = "ipxact"
         if internalPowerDomainReference is None:
             self.internalPowerDomainReference = []
         else:
             self.internalPowerDomainReference = internalPowerDomainReference
-        self.internalPowerDomainReference_nsprefix_ = None
+        self.internalPowerDomainReference_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -64589,7 +64589,7 @@ class internalPowerDomainReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -64739,7 +64739,7 @@ class isResetType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.level = _cast(None, level)
         self.level_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -64906,7 +64906,7 @@ class isClockEnType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.level = _cast(None, level)
         self.level_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -65075,7 +65075,7 @@ class isPowerEnType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.level = _cast(None, level)
         self.level_nsprefix_ = None
         self.powerDomainRef = _cast(None, powerDomainRef)
@@ -65266,7 +65266,7 @@ class isFlowControlType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.flowType = _cast(None, flowType)
         self.flowType_nsprefix_ = None
         self.user = _cast(None, user)
@@ -65455,7 +65455,7 @@ class isUserType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.user = _cast(None, user)
         self.user_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -65598,7 +65598,7 @@ class viewRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -65739,12 +65739,12 @@ class indicesType3(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if index is None:
             self.index = []
         else:
             self.index = index
-        self.index_nsprefix_ = None
+        self.index_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -65901,7 +65901,7 @@ class viewRefType4(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -66040,7 +66040,7 @@ class viewRefType5(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -66179,12 +66179,12 @@ class pathSegmentsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if pathSegment is None:
             self.pathSegment = []
         else:
             self.pathSegment = pathSegment
-        self.pathSegment_nsprefix_ = None
+        self.pathSegment_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -66343,12 +66343,12 @@ class pathSegmentsType6(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if pathSegment is None:
             self.pathSegment = []
         else:
             self.pathSegment = pathSegment
-        self.pathSegment_nsprefix_ = None
+        self.pathSegment_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -66507,12 +66507,12 @@ class pathSegmentsType7(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if pathSegment is None:
             self.pathSegment = []
         else:
             self.pathSegment = pathSegment
-        self.pathSegment_nsprefix_ = None
+        self.pathSegment_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -66673,12 +66673,12 @@ class vectorsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if vector is None:
             self.vector = []
         else:
             self.vector = vector
-        self.vector_nsprefix_ = None
+        self.vector_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -66837,15 +66837,15 @@ class vectorType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.vectorId = _cast(None, vectorId)
         self.vectorId_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -67052,7 +67052,7 @@ class addressSpaceRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -67196,7 +67196,7 @@ class memoryMapRefType8(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -67340,7 +67340,7 @@ class addressSpaceRefType9(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -67484,7 +67484,7 @@ class memoryMapRefType10(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -67628,13 +67628,13 @@ class arrayType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -67823,15 +67823,15 @@ class arrayType11(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.arrayId = _cast(None, arrayId)
         self.arrayId_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -68051,15 +68051,15 @@ class modeLinkType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.externalModeReference = externalModeReference
-        self.externalModeReference_nsprefix_ = None
+        self.externalModeReference_nsprefix_ = "ipxact"
         self.modeReference = modeReference
-        self.modeReference_nsprefix_ = None
+        self.modeReference_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -68277,7 +68277,7 @@ class externalModeReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.modeRef = _cast(None, modeRef)
         self.modeRef_nsprefix_ = None
 
@@ -68424,7 +68424,7 @@ class modeReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.modeRef = _cast(None, modeRef)
         self.modeRef_nsprefix_ = None
 
@@ -68579,15 +68579,15 @@ class viewLinkType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.externalViewReference = externalViewReference
-        self.externalViewReference_nsprefix_ = None
+        self.externalViewReference_nsprefix_ = "ipxact"
         self.viewReference = viewReference
-        self.viewReference_nsprefix_ = None
+        self.viewReference_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -68805,7 +68805,7 @@ class externalViewReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.viewRef = _cast(None, viewRef)
         self.viewRef_nsprefix_ = None
 
@@ -68952,7 +68952,7 @@ class viewReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.viewRef = _cast(None, viewRef)
         self.viewRef_nsprefix_ = None
 
@@ -69107,15 +69107,15 @@ class resetTypeLinkType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.externalResetTypeReference = externalResetTypeReference
-        self.externalResetTypeReference_nsprefix_ = None
+        self.externalResetTypeReference_nsprefix_ = "ipxact"
         self.resetTypeReference = resetTypeReference
-        self.resetTypeReference_nsprefix_ = None
+        self.resetTypeReference_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -69333,7 +69333,7 @@ class externalResetTypeReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.resetTypeRef = _cast(None, resetTypeRef)
         self.resetTypeRef_nsprefix_ = None
 
@@ -69488,7 +69488,7 @@ class resetTypeReferenceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.resetTypeRef = _cast(None, resetTypeRef)
         self.resetTypeRef_nsprefix_ = None
 
@@ -69632,7 +69632,7 @@ class protocolTypeType13(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.custom = _cast(None, custom)
         self.custom_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -69800,7 +69800,7 @@ class extensionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.mandatory = _cast(bool, mandatory)
         self.mandatory_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -69943,7 +69943,7 @@ class typeNameType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.exact = _cast(bool, exact)
         self.exact_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70084,7 +70084,7 @@ class typeDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70223,7 +70223,7 @@ class viewRefType14(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70362,7 +70362,7 @@ class typeNameType15(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.implicit = _cast(bool, implicit)
         self.implicit_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70505,7 +70505,7 @@ class typeDefinitionType16(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70644,7 +70644,7 @@ class typeNameType17(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.constrained = constrained
         self.constrained_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70796,7 +70796,7 @@ class typeDefinitionType19(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -70935,7 +70935,7 @@ class viewRefType20(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -71088,33 +71088,33 @@ class fieldSliceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -71514,7 +71514,7 @@ class addressSpaceRefType21(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -71658,7 +71658,7 @@ class memoryMapRefType22(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -71802,7 +71802,7 @@ class modeRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.priority = _cast(int, priority)
         self.priority_nsprefix_ = None
         self.id = _cast(None, id)
@@ -71962,12 +71962,12 @@ class powerConstraintsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if powerConstraint is None:
             self.powerConstraint = []
         else:
             self.powerConstraint = powerConstraint
-        self.powerConstraint_nsprefix_ = None
+        self.powerConstraint_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -72131,17 +72131,17 @@ class connectionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if maxConnections is None:
             self.maxConnections = globals()["unsignedIntExpression"]("0")
         else:
             self.maxConnections = maxConnections
-        self.maxConnections_nsprefix_ = None
+        self.maxConnections_nsprefix_ = "ipxact"
         if minConnections is None:
             self.minConnections = globals()["unsignedIntExpression"]("1")
         else:
             self.minConnections = minConnections
-        self.minConnections_nsprefix_ = None
+        self.minConnections_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -72320,12 +72320,12 @@ class powerConstraintsType23(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if powerConstraint is None:
             self.powerConstraint = []
         else:
             self.powerConstraint = powerConstraint
-        self.powerConstraint_nsprefix_ = None
+        self.powerConstraint_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -72489,17 +72489,17 @@ class connectionType24(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if maxConnections is None:
             self.maxConnections = globals()["unsignedIntExpression"]("0")
         else:
             self.maxConnections = maxConnections
-        self.maxConnections_nsprefix_ = None
+        self.maxConnections_nsprefix_ = "ipxact"
         if minConnections is None:
             self.minConnections = globals()["unsignedIntExpression"]("1")
         else:
             self.minConnections = minConnections
-        self.minConnections_nsprefix_ = None
+        self.minConnections_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -72678,15 +72678,15 @@ class vectorType25(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.vectorId = _cast(None, vectorId)
         self.vectorId_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -72893,12 +72893,12 @@ class accessHandlesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -73057,7 +73057,7 @@ class viewRefType26(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -73196,7 +73196,7 @@ class typeNameType27(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -73335,7 +73335,7 @@ class typeDefinitionType28(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -73474,7 +73474,7 @@ class viewRefType29(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -73615,15 +73615,15 @@ class arrayType30(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.arrayId = _cast(None, arrayId)
         self.arrayId_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -73846,25 +73846,25 @@ class structPortTypeDefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.typeName = typeName
-        self.typeName_nsprefix_ = None
+        self.typeName_nsprefix_ = "ipxact"
         if typeDefinition is None:
             self.typeDefinition = []
         else:
             self.typeDefinition = typeDefinition
-        self.typeDefinition_nsprefix_ = None
+        self.typeDefinition_nsprefix_ = "ipxact"
         self.typeParameters = typeParameters
-        self.typeParameters_nsprefix_ = None
+        self.typeParameters_nsprefix_ = "ipxact"
         self.role = role
-        self.role_nsprefix_ = None
+        self.role_nsprefix_ = "ipxact"
         if viewRef is None:
             self.viewRef = []
         else:
             self.viewRef = viewRef
-        self.viewRef_nsprefix_ = None
+        self.viewRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -74153,7 +74153,7 @@ class typeNameType31(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.constrained = constrained
         self.constrained_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -74305,7 +74305,7 @@ class typeDefinitionType33(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -74444,12 +74444,12 @@ class typeParametersType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if typeParameter is None:
             self.typeParameter = []
         else:
             self.typeParameter = typeParameter
-        self.typeParameter_nsprefix_ = None
+        self.typeParameter_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -74608,7 +74608,7 @@ class viewRefType34(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -74747,7 +74747,7 @@ class structType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -74916,7 +74916,7 @@ class unionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -75085,7 +75085,7 @@ class interfaceType35(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.phantom = _cast(bool, phantom)
         self.phantom_nsprefix_ = None
 
@@ -75227,12 +75227,12 @@ class subPortsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if subPort is None:
             self.subPort = []
         else:
             self.subPort = subPort
-        self.subPort_nsprefix_ = None
+        self.subPort_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -75389,7 +75389,7 @@ class structType36(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -75558,7 +75558,7 @@ class unionType37(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -75727,7 +75727,7 @@ class interfaceType38(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.phantom = _cast(bool, phantom)
         self.phantom_nsprefix_ = None
 
@@ -75869,12 +75869,12 @@ class subPortsType39(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if subPort is None:
             self.subPort = []
         else:
             self.subPort = subPort
-        self.subPort_nsprefix_ = None
+        self.subPort_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -76031,7 +76031,7 @@ class structType40(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -76200,7 +76200,7 @@ class unionType41(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.direction = _cast(None, direction)
         self.direction_nsprefix_ = None
 
@@ -76369,7 +76369,7 @@ class interfaceType42(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.phantom = _cast(bool, phantom)
         self.phantom_nsprefix_ = None
 
@@ -76511,7 +76511,7 @@ class cellFunctionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.other = _cast(None, other)
         self.other_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -76685,11 +76685,11 @@ class vectorType43(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.left = left
-        self.left_nsprefix_ = None
+        self.left_nsprefix_ = "ipxact"
         self.right = right
-        self.right_nsprefix_ = None
+        self.right_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -76862,7 +76862,7 @@ class viewRefType44(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -77001,7 +77001,7 @@ class isIncludeFileType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.externalDeclarations = _cast(bool, externalDeclarations)
         self.externalDeclarations_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -77147,7 +77147,7 @@ class logicalNameType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.default = _cast(bool, default)
         self.default_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -77290,7 +77290,7 @@ class exportedNameType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -77444,15 +77444,15 @@ class buildCommandType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.command = command
-        self.command_nsprefix_ = None
+        self.command_nsprefix_ = "ipxact"
         self.flags = flags
-        self.flags_nsprefix_ = None
+        self.flags_nsprefix_ = "ipxact"
         self.replaceDefaultFlags = replaceDefaultFlags
-        self.replaceDefaultFlags_nsprefix_ = None
+        self.replaceDefaultFlags_nsprefix_ = "ipxact"
         self.targetName = targetName
-        self.targetName_nsprefix_ = None
+        self.targetName_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -77680,7 +77680,7 @@ class imageTypeType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -77829,18 +77829,18 @@ class languageToolsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if fileBuilder is None:
             self.fileBuilder = []
         else:
             self.fileBuilder = fileBuilder
-        self.fileBuilder_nsprefix_ = None
+        self.fileBuilder_nsprefix_ = "ipxact"
         self.linker = linker
-        self.linker_nsprefix_ = None
+        self.linker_nsprefix_ = "ipxact"
         self.linkerFlags = linkerFlags
-        self.linkerFlags_nsprefix_ = None
+        self.linkerFlags_nsprefix_ = "ipxact"
         self.linkerCommandFile = linkerCommandFile
-        self.linkerCommandFile_nsprefix_ = None
+        self.linkerCommandFile_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -78096,19 +78096,19 @@ class fileBuilderType45(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.fileType = fileType
-        self.fileType_nsprefix_ = None
+        self.fileType_nsprefix_ = "ipxact"
         self.command = command
-        self.command_nsprefix_ = None
+        self.command_nsprefix_ = "ipxact"
         self.flags = flags
-        self.flags_nsprefix_ = None
+        self.flags_nsprefix_ = "ipxact"
         self.replaceDefaultFlags = replaceDefaultFlags
-        self.replaceDefaultFlags_nsprefix_ = None
+        self.replaceDefaultFlags_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -78376,12 +78376,12 @@ class fileSetRefGroupType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if fileSetRef is None:
             self.fileSetRef = []
         else:
             self.fileSetRef = fileSetRef
-        self.fileSetRef_nsprefix_ = None
+        self.fileSetRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -78540,7 +78540,7 @@ class groupType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -78701,30 +78701,30 @@ class functionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.replicate = _cast(bool, replicate)
         self.replicate_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.entryPoint = entryPoint
-        self.entryPoint_nsprefix_ = None
+        self.entryPoint_nsprefix_ = "ipxact"
         self.fileRef = fileRef
-        self.fileRef_nsprefix_ = None
+        self.fileRef_nsprefix_ = "ipxact"
         self.returnType = returnType
         self.validate_returnTypeType(self.returnType)
-        self.returnType_nsprefix_ = None
+        self.returnType_nsprefix_ = "ipxact"
         if argument is None:
             self.argument = []
         else:
             self.argument = argument
-        self.argument_nsprefix_ = None
+        self.argument_nsprefix_ = "ipxact"
         self.disabled = disabled
-        self.disabled_nsprefix_ = None
+        self.disabled_nsprefix_ = "ipxact"
         if sourceFile is None:
             self.sourceFile = []
         else:
             self.sourceFile = sourceFile
-        self.sourceFile_nsprefix_ = None
+        self.sourceFile_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -79114,7 +79114,7 @@ class argumentType(nameValuePairType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("argumentType"), self).__init__(
             id, name, displayName, shortDescription, description, value, vendorExtensions, **kwargs_
         )
@@ -79302,13 +79302,13 @@ class sourceFileType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.sourceName = sourceName
-        self.sourceName_nsprefix_ = None
+        self.sourceName_nsprefix_ = "ipxact"
         self.fileType = fileType
-        self.fileType_nsprefix_ = None
+        self.fileType_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -79500,9 +79500,9 @@ class initiatorType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -79663,17 +79663,17 @@ class addressSpaceRefType46(addrSpaceRefType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("addressSpaceRefType46"), self).__init__(
             addressSpaceRef, id, vendorExtensions, **kwargs_
         )
         self.baseAddress = baseAddress
-        self.baseAddress_nsprefix_ = None
+        self.baseAddress_nsprefix_ = "ipxact"
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -79865,7 +79865,7 @@ class modeRefType47(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -80016,19 +80016,19 @@ class targetType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         if transparentBridge is None:
             self.transparentBridge = []
         else:
             self.transparentBridge = transparentBridge
-        self.transparentBridge_nsprefix_ = None
+        self.transparentBridge_nsprefix_ = "ipxact"
         if fileSetRefGroup is None:
             self.fileSetRefGroup = []
         else:
             self.fileSetRefGroup = fileSetRefGroup
-        self.fileSetRefGroup_nsprefix_ = None
+        self.fileSetRefGroup_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -80248,16 +80248,16 @@ class fileSetRefGroupType48(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
         if fileSetRef is None:
             self.fileSetRef = []
         else:
             self.fileSetRef = fileSetRef
-        self.fileSetRef_nsprefix_ = None
+        self.fileSetRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -80458,9 +80458,9 @@ class systemType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -80615,9 +80615,9 @@ class mirroredTargetType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.baseAddresses = baseAddresses
-        self.baseAddresses_nsprefix_ = None
+        self.baseAddresses_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -80769,14 +80769,14 @@ class baseAddressesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if remapAddresses is None:
             self.remapAddresses = []
         else:
             self.remapAddresses = remapAddresses
-        self.remapAddresses_nsprefix_ = None
+        self.remapAddresses_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -80961,16 +80961,16 @@ class remapAddressesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.remapAddress = remapAddress
-        self.remapAddress_nsprefix_ = None
+        self.remapAddress_nsprefix_ = "ipxact"
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -81166,9 +81166,9 @@ class mirroredSystemType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -81323,11 +81323,11 @@ class monitorType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.interfaceMode = _cast(None, interfaceMode)
         self.interfaceMode_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -81548,24 +81548,24 @@ class channelType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if busInterfaceRef is None:
             self.busInterfaceRef = []
         else:
             self.busInterfaceRef = busInterfaceRef
-        self.busInterfaceRef_nsprefix_ = None
+        self.busInterfaceRef_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -81896,13 +81896,13 @@ class busInterfaceRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.localName = localName
-        self.localName_nsprefix_ = None
+        self.localName_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -82098,9 +82098,9 @@ class initiatorType49(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -82261,17 +82261,17 @@ class addressSpaceRefType50(addrSpaceRefType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("addressSpaceRefType50"), self).__init__(
             addressSpaceRef, id, vendorExtensions, **kwargs_
         )
         self.baseAddress = baseAddress
-        self.baseAddress_nsprefix_ = None
+        self.baseAddress_nsprefix_ = "ipxact"
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -82463,7 +82463,7 @@ class modeRefType51(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -82614,19 +82614,19 @@ class targetType52(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         if transparentBridge is None:
             self.transparentBridge = []
         else:
             self.transparentBridge = transparentBridge
-        self.transparentBridge_nsprefix_ = None
+        self.transparentBridge_nsprefix_ = "ipxact"
         if fileSetRefGroup is None:
             self.fileSetRefGroup = []
         else:
             self.fileSetRefGroup = fileSetRefGroup
-        self.fileSetRefGroup_nsprefix_ = None
+        self.fileSetRefGroup_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -82846,16 +82846,16 @@ class fileSetRefGroupType53(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
         if fileSetRef is None:
             self.fileSetRef = []
         else:
             self.fileSetRef = fileSetRef
-        self.fileSetRef_nsprefix_ = None
+        self.fileSetRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83056,9 +83056,9 @@ class systemType54(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83213,9 +83213,9 @@ class mirroredTargetType55(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.baseAddresses = baseAddresses
-        self.baseAddresses_nsprefix_ = None
+        self.baseAddresses_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83367,14 +83367,14 @@ class baseAddressesType56(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if remapAddresses is None:
             self.remapAddresses = []
         else:
             self.remapAddresses = remapAddresses
-        self.remapAddresses_nsprefix_ = None
+        self.remapAddresses_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83559,16 +83559,16 @@ class remapAddressesType57(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.remapAddress = remapAddress
-        self.remapAddress_nsprefix_ = None
+        self.remapAddress_nsprefix_ = "ipxact"
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83764,9 +83764,9 @@ class mirroredSystemType59(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -83921,11 +83921,11 @@ class monitorType60(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.interfaceMode = _cast(None, interfaceMode)
         self.interfaceMode_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -84132,9 +84132,9 @@ class systemType62(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -84287,9 +84287,9 @@ class mirroredSystemType63(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -84442,7 +84442,7 @@ class addressSpaceRefType64(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -84586,7 +84586,7 @@ class memoryMapRefType65(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -84730,7 +84730,7 @@ class addressSpaceRefType66(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -84874,7 +84874,7 @@ class memoryMapRefType67(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -85032,18 +85032,18 @@ class abstractionTypeType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if viewRef is None:
             self.viewRef = []
         else:
             self.viewRef = viewRef
-        self.viewRef_nsprefix_ = None
+        self.viewRef_nsprefix_ = "ipxact"
         self.abstractionRef = abstractionRef
-        self.abstractionRef_nsprefix_ = None
+        self.abstractionRef_nsprefix_ = "ipxact"
         self.portMaps = portMaps
-        self.portMaps_nsprefix_ = None
+        self.portMaps_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -85266,12 +85266,12 @@ class portMapsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if portMap is None:
             self.portMap = []
         else:
             self.portMap = portMap
-        self.portMap_nsprefix_ = None
+        self.portMap_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -85446,21 +85446,21 @@ class portMapType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.invert = _cast(None, invert)
         self.invert_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.logicalPort = logicalPort
-        self.logicalPort_nsprefix_ = None
+        self.logicalPort_nsprefix_ = "ipxact"
         self.physicalPort = physicalPort
-        self.physicalPort_nsprefix_ = None
+        self.physicalPort_nsprefix_ = "ipxact"
         self.logicalTieOff = logicalTieOff
-        self.logicalTieOff_nsprefix_ = None
+        self.logicalTieOff_nsprefix_ = "ipxact"
         self.isInformative = isInformative
-        self.isInformative_nsprefix_ = None
+        self.isInformative_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -85756,13 +85756,13 @@ class logicalPortType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -85956,19 +85956,19 @@ class physicalPortType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
         self.validate_portName(self.name)
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.partSelect = partSelect
-        self.partSelect_nsprefix_ = None
+        self.partSelect_nsprefix_ = "ipxact"
         if subPort is None:
             self.subPort = []
         else:
             self.subPort = subPort
-        self.subPort_nsprefix_ = None
+        self.subPort_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -86213,14 +86213,14 @@ class subPortType68(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
         self.validate_portName(self.name)
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.partSelect = partSelect
-        self.partSelect_nsprefix_ = None
+        self.partSelect_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -86431,12 +86431,12 @@ class portsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if port is None:
             self.port = []
         else:
             self.port = port
-        self.port_nsprefix_ = None
+        self.port_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -86613,27 +86613,27 @@ class portType70(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.logicalName = logicalName
-        self.logicalName_nsprefix_ = None
+        self.logicalName_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.match = match
-        self.match_nsprefix_ = None
+        self.match_nsprefix_ = "ipxact"
         self.wire = wire
-        self.wire_nsprefix_ = None
+        self.wire_nsprefix_ = "ipxact"
         self.transactional = transactional
-        self.transactional_nsprefix_ = None
+        self.transactional_nsprefix_ = "ipxact"
         self.packets = packets
-        self.packets_nsprefix_ = None
+        self.packets_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -87047,18 +87047,18 @@ class transactionalType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.qualifier = qualifier
-        self.qualifier_nsprefix_ = None
+        self.qualifier_nsprefix_ = "ipxact"
         if onSystem is None:
             self.onSystem = []
         else:
             self.onSystem = onSystem
-        self.onSystem_nsprefix_ = None
+        self.onSystem_nsprefix_ = "ipxact"
         self.onInitiator = onInitiator
-        self.onInitiator_nsprefix_ = None
+        self.onInitiator_nsprefix_ = "ipxact"
         self.onTarget = onTarget
-        self.onTarget_nsprefix_ = None
+        self.onTarget_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -87315,22 +87315,22 @@ class onSystemType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.initiative = initiative
         self.validate_initiativeType71(self.initiative)
-        self.initiative_nsprefix_ = None
+        self.initiative_nsprefix_ = "ipxact"
         self.kind = kind
-        self.kind_nsprefix_ = None
+        self.kind_nsprefix_ = "ipxact"
         self.busWidth = busWidth
-        self.busWidth_nsprefix_ = None
+        self.busWidth_nsprefix_ = "ipxact"
         self.protocol = protocol
-        self.protocol_nsprefix_ = None
+        self.protocol_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -87675,18 +87675,18 @@ class onInitiatorType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.initiative = initiative
         self.validate_initiativeType72(self.initiative)
-        self.initiative_nsprefix_ = None
+        self.initiative_nsprefix_ = "ipxact"
         self.kind = kind
-        self.kind_nsprefix_ = None
+        self.kind_nsprefix_ = "ipxact"
         self.busWidth = busWidth
-        self.busWidth_nsprefix_ = None
+        self.busWidth_nsprefix_ = "ipxact"
         self.protocol = protocol
-        self.protocol_nsprefix_ = None
+        self.protocol_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -87988,18 +87988,18 @@ class onTargetType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.initiative = initiative
         self.validate_initiativeType73(self.initiative)
-        self.initiative_nsprefix_ = None
+        self.initiative_nsprefix_ = "ipxact"
         self.kind = kind
-        self.kind_nsprefix_ = None
+        self.kind_nsprefix_ = "ipxact"
         self.busWidth = busWidth
-        self.busWidth_nsprefix_ = None
+        self.busWidth_nsprefix_ = "ipxact"
         self.protocol = protocol
-        self.protocol_nsprefix_ = None
+        self.protocol_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -88305,22 +88305,22 @@ class onSystemType74(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.group = group
-        self.group_nsprefix_ = None
+        self.group_nsprefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.direction = direction
         self.validate_direction(self.direction)
-        self.direction_nsprefix_ = None
+        self.direction_nsprefix_ = "ipxact"
         self.modeConstraints = modeConstraints
-        self.modeConstraints_nsprefix_ = None
+        self.modeConstraints_nsprefix_ = "ipxact"
         self.mirroredModeConstraints = mirroredModeConstraints
-        self.mirroredModeConstraints_nsprefix_ = None
+        self.mirroredModeConstraints_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -88669,18 +88669,18 @@ class onInitiatorType76(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.direction = direction
         self.validate_direction(self.direction)
-        self.direction_nsprefix_ = None
+        self.direction_nsprefix_ = "ipxact"
         self.modeConstraints = modeConstraints
-        self.modeConstraints_nsprefix_ = None
+        self.modeConstraints_nsprefix_ = "ipxact"
         self.mirroredModeConstraints = mirroredModeConstraints
-        self.mirroredModeConstraints_nsprefix_ = None
+        self.mirroredModeConstraints_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -88987,18 +88987,18 @@ class onTargetType78(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.presence = presence
-        self.presence_nsprefix_ = None
+        self.presence_nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.direction = direction
         self.validate_direction(self.direction)
-        self.direction_nsprefix_ = None
+        self.direction_nsprefix_ = "ipxact"
         self.modeConstraints = modeConstraints
-        self.modeConstraints_nsprefix_ = None
+        self.modeConstraints_nsprefix_ = "ipxact"
         self.mirroredModeConstraints = mirroredModeConstraints
-        self.mirroredModeConstraints_nsprefix_ = None
+        self.mirroredModeConstraints_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -89298,15 +89298,15 @@ class generatorChainSelectorType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.unique = _cast(bool, unique)
         self.unique_nsprefix_ = None
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.groupSelector = groupSelector
-        self.groupSelector_nsprefix_ = None
+        self.groupSelector_nsprefix_ = "ipxact"
         self.generatorChainRef = generatorChainRef
-        self.generatorChainRef_nsprefix_ = None
+        self.generatorChainRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -89520,7 +89520,7 @@ class chainGroupType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -89659,7 +89659,7 @@ class nameType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -89798,7 +89798,7 @@ class groupType80(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -89937,7 +89937,7 @@ class apiTypeType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -90110,11 +90110,11 @@ class transportMethodsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.transportMethod = transportMethod
-        self.transportMethod_nsprefix_ = None
+        self.transportMethod_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -90278,7 +90278,7 @@ class transportMethodType81(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -90442,12 +90442,12 @@ class accessHandlesType82(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -90606,7 +90606,7 @@ class bankDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -90771,7 +90771,7 @@ class bankType(bankedBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType"), self).__init__(
             bankAlignment,
             id,
@@ -90791,7 +90791,7 @@ class bankType(bankedBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -90947,12 +90947,12 @@ class accessHandlesType83(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -91111,7 +91111,7 @@ class bankDefinitionRefType84(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -91280,7 +91280,7 @@ class bankType85(bankedDefinitionBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType85"), self).__init__(
             bankAlignment,
             id,
@@ -91299,7 +91299,7 @@ class bankType85(bankedDefinitionBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -91455,12 +91455,12 @@ class accessHandlesType86(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -91619,12 +91619,12 @@ class accessHandlesType87(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -91783,7 +91783,7 @@ class addressBlockDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -91937,7 +91937,7 @@ class modeRefType88(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -92076,12 +92076,12 @@ class accessHandlesType89(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -92240,7 +92240,7 @@ class bankDefinitionRefType90(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -92410,7 +92410,7 @@ class bankType91(bankedBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType91"), self).__init__(
             bankAlignment,
             id,
@@ -92430,7 +92430,7 @@ class bankType91(bankedBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -92586,12 +92586,12 @@ class accessHandlesType92(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -92750,7 +92750,7 @@ class bankDefinitionRefType93(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -92919,7 +92919,7 @@ class bankType94(bankedDefinitionBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType94"), self).__init__(
             bankAlignment,
             id,
@@ -92938,7 +92938,7 @@ class bankType94(bankedDefinitionBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -93094,12 +93094,12 @@ class accessHandlesType95(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -93258,12 +93258,12 @@ class accessHandlesType96(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -93422,12 +93422,12 @@ class accessHandlesType97(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -93586,14 +93586,14 @@ class arrayType98(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if dim is None:
             self.dim = []
         else:
             self.dim = dim
-        self.dim_nsprefix_ = None
+        self.dim_nsprefix_ = "ipxact"
         self.bitStride = bitStride
-        self.bitStride_nsprefix_ = None
+        self.bitStride_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -93775,7 +93775,7 @@ class fieldDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -93922,12 +93922,12 @@ class resetsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if reset is None:
             self.reset = []
         else:
             self.reset = reset
-        self.reset_nsprefix_ = None
+        self.reset_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -94097,31 +94097,31 @@ class aliasOfType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -94497,7 +94497,7 @@ class memoryMapDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -94647,7 +94647,7 @@ class remapDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -94792,7 +94792,7 @@ class remapDefinitionRefType99(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -94961,7 +94961,7 @@ class bankType100(bankedDefinitionBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType100"), self).__init__(
             bankAlignment,
             id,
@@ -94980,7 +94980,7 @@ class bankType100(bankedDefinitionBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -95167,31 +95167,31 @@ class addressSpaceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.segments = segments
-        self.segments_nsprefix_ = None
+        self.segments_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.localMemoryMap = localMemoryMap
-        self.localMemoryMap_nsprefix_ = None
+        self.localMemoryMap_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -95642,12 +95642,12 @@ class segmentsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if segment is None:
             self.segment = []
         else:
             self.segment = segment
-        self.segment_nsprefix_ = None
+        self.segment_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -95822,23 +95822,23 @@ class segmentType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -96215,44 +96215,44 @@ class registerType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -96847,12 +96847,12 @@ class accessHandlesType101(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -97011,7 +97011,7 @@ class registerDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -97181,7 +97181,7 @@ class bankType102(bankedBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType102"), self).__init__(
             bankAlignment,
             id,
@@ -97201,7 +97201,7 @@ class bankType102(bankedBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -97376,7 +97376,7 @@ class bankType103(bankedDefinitionBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType103"), self).__init__(
             bankAlignment,
             id,
@@ -97395,7 +97395,7 @@ class bankType103(bankedDefinitionBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -97580,44 +97580,44 @@ class registerType104(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -98212,12 +98212,12 @@ class accessHandlesType105(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -98376,7 +98376,7 @@ class registerDefinitionRefType106(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -98553,39 +98553,39 @@ class alternateRegisterType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -99085,12 +99085,12 @@ class accessHandlesType107(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -99249,7 +99249,7 @@ class enumerationDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -99403,13 +99403,13 @@ class fieldAccessPoliciesType(fieldAccessPropertiesType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("fieldAccessPoliciesType"), self).__init__(id, **kwargs_)
         if fieldAccessPolicy is None:
             self.fieldAccessPolicy = []
         else:
             self.fieldAccessPolicy = fieldAccessPolicy
-        self.fieldAccessPolicy_nsprefix_ = None
+        self.fieldAccessPolicy_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -99602,39 +99602,39 @@ class fieldAccessPolicyType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
         self.fieldAccessPolicyDefinitionRef = fieldAccessPolicyDefinitionRef
-        self.fieldAccessPolicyDefinitionRef_nsprefix_ = None
+        self.fieldAccessPolicyDefinitionRef_nsprefix_ = "ipxact"
         self.access = access
-        self.access_nsprefix_ = None
+        self.access_nsprefix_ = "ipxact"
         self.modifiedWriteValue = modifiedWriteValue
-        self.modifiedWriteValue_nsprefix_ = None
+        self.modifiedWriteValue_nsprefix_ = "ipxact"
         self.writeValueConstraint = writeValueConstraint
-        self.writeValueConstraint_nsprefix_ = None
+        self.writeValueConstraint_nsprefix_ = "ipxact"
         self.readAction = readAction
-        self.readAction_nsprefix_ = None
+        self.readAction_nsprefix_ = "ipxact"
         self.readResponse = readResponse
-        self.readResponse_nsprefix_ = None
+        self.readResponse_nsprefix_ = "ipxact"
         self.broadcasts = broadcasts
-        self.broadcasts_nsprefix_ = None
+        self.broadcasts_nsprefix_ = "ipxact"
         self.accessRestrictions = accessRestrictions
-        self.accessRestrictions_nsprefix_ = None
+        self.accessRestrictions_nsprefix_ = "ipxact"
         self.testable = testable
-        self.testable_nsprefix_ = None
+        self.testable_nsprefix_ = "ipxact"
         if reserved is None:
             self.reserved = globals()["unsignedBitExpression"]("0")
         else:
             self.reserved = reserved
-        self.reserved_nsprefix_ = None
+        self.reserved_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -100092,12 +100092,12 @@ class broadcastsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if broadcastTo is None:
             self.broadcastTo = []
         else:
             self.broadcastTo = broadcastTo
-        self.broadcastTo_nsprefix_ = None
+        self.broadcastTo_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -100270,33 +100270,33 @@ class broadcastToType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -100686,7 +100686,7 @@ class addressSpaceRefType109(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -100830,7 +100830,7 @@ class memoryMapRefType110(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -100976,7 +100976,7 @@ class testableType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.testConstraint = _cast(None, testConstraint)
         self.testConstraint_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -101147,12 +101147,12 @@ class accessHandlesType111(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -101311,7 +101311,7 @@ class registerFileDefinitionRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -101467,12 +101467,12 @@ class resetsType112(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if reset is None:
             self.reset = []
         else:
             self.reset = reset
-        self.reset_nsprefix_ = None
+        self.reset_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -101642,31 +101642,31 @@ class aliasOfType113(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -102042,7 +102042,7 @@ class addressSpaceRefType114(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -102186,7 +102186,7 @@ class memoryMapRefType115(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -102330,13 +102330,13 @@ class fieldAccessPoliciesType116(fieldAccessPropertiesType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("fieldAccessPoliciesType116"), self).__init__(id, **kwargs_)
         if fieldAccessPolicy is None:
             self.fieldAccessPolicy = []
         else:
             self.fieldAccessPolicy = fieldAccessPolicy
-        self.fieldAccessPolicy_nsprefix_ = None
+        self.fieldAccessPolicy_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -102529,39 +102529,39 @@ class fieldAccessPolicyType117(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
         self.fieldAccessPolicyDefinitionRef = fieldAccessPolicyDefinitionRef
-        self.fieldAccessPolicyDefinitionRef_nsprefix_ = None
+        self.fieldAccessPolicyDefinitionRef_nsprefix_ = "ipxact"
         self.access = access
-        self.access_nsprefix_ = None
+        self.access_nsprefix_ = "ipxact"
         self.modifiedWriteValue = modifiedWriteValue
-        self.modifiedWriteValue_nsprefix_ = None
+        self.modifiedWriteValue_nsprefix_ = "ipxact"
         self.writeValueConstraint = writeValueConstraint
-        self.writeValueConstraint_nsprefix_ = None
+        self.writeValueConstraint_nsprefix_ = "ipxact"
         self.readAction = readAction
-        self.readAction_nsprefix_ = None
+        self.readAction_nsprefix_ = "ipxact"
         self.readResponse = readResponse
-        self.readResponse_nsprefix_ = None
+        self.readResponse_nsprefix_ = "ipxact"
         self.broadcasts = broadcasts
-        self.broadcasts_nsprefix_ = None
+        self.broadcasts_nsprefix_ = "ipxact"
         self.accessRestrictions = accessRestrictions
-        self.accessRestrictions_nsprefix_ = None
+        self.accessRestrictions_nsprefix_ = "ipxact"
         self.testable = testable
-        self.testable_nsprefix_ = None
+        self.testable_nsprefix_ = "ipxact"
         if reserved is None:
             self.reserved = globals()["unsignedBitExpression"]("0")
         else:
             self.reserved = reserved
-        self.reserved_nsprefix_ = None
+        self.reserved_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -103024,12 +103024,12 @@ class broadcastsType118(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if broadcastTo is None:
             self.broadcastTo = []
         else:
             self.broadcastTo = broadcastTo
-        self.broadcastTo_nsprefix_ = None
+        self.broadcastTo_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -103202,33 +103202,33 @@ class broadcastToType119(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -103618,7 +103618,7 @@ class addressSpaceRefType120(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -103762,7 +103762,7 @@ class memoryMapRefType121(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -103908,7 +103908,7 @@ class testableType122(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.testConstraint = _cast(None, testConstraint)
         self.testConstraint_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -104108,44 +104108,44 @@ class registerType124(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -104740,12 +104740,12 @@ class accessHandlesType125(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -104904,7 +104904,7 @@ class registerDefinitionRefType126(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -105087,44 +105087,44 @@ class registerType127(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -105719,12 +105719,12 @@ class accessHandlesType128(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -105883,7 +105883,7 @@ class registerDefinitionRefType129(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -106055,26 +106055,26 @@ class enumerationDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         if enumeratedValue is None:
             self.enumeratedValue = []
         else:
             self.enumeratedValue = enumeratedValue
-        self.enumeratedValue_nsprefix_ = None
+        self.enumeratedValue_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -106450,29 +106450,29 @@ class fieldAccessPolicyDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.access = access
-        self.access_nsprefix_ = None
+        self.access_nsprefix_ = "ipxact"
         self.modifiedWriteValue = modifiedWriteValue
-        self.modifiedWriteValue_nsprefix_ = None
+        self.modifiedWriteValue_nsprefix_ = "ipxact"
         self.writeValueConstraint = writeValueConstraint
-        self.writeValueConstraint_nsprefix_ = None
+        self.writeValueConstraint_nsprefix_ = "ipxact"
         self.readAction = readAction
-        self.readAction_nsprefix_ = None
+        self.readAction_nsprefix_ = "ipxact"
         self.readResponse = readResponse
-        self.readResponse_nsprefix_ = None
+        self.readResponse_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -106929,31 +106929,31 @@ class fieldDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.bitWidth = bitWidth
-        self.bitWidth_nsprefix_ = None
+        self.bitWidth_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.resets = resets
-        self.resets_nsprefix_ = None
+        self.resets_nsprefix_ = "ipxact"
         self.fieldAccessPolicies = fieldAccessPolicies
-        self.fieldAccessPolicies_nsprefix_ = None
+        self.fieldAccessPolicies_nsprefix_ = "ipxact"
         self.enumeratedValues = enumeratedValues
-        self.enumeratedValues_nsprefix_ = None
+        self.enumeratedValues_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -107414,12 +107414,12 @@ class resetsType130(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if reset is None:
             self.reset = []
         else:
             self.reset = reset
-        self.reset_nsprefix_ = None
+        self.reset_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -107576,13 +107576,13 @@ class fieldAccessPoliciesType131(fieldAccessPropertiesType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("fieldAccessPoliciesType131"), self).__init__(id, **kwargs_)
         if fieldAccessPolicy is None:
             self.fieldAccessPolicy = []
         else:
             self.fieldAccessPolicy = fieldAccessPolicy
-        self.fieldAccessPolicy_nsprefix_ = None
+        self.fieldAccessPolicy_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -107775,39 +107775,39 @@ class fieldAccessPolicyType132(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
         self.fieldAccessPolicyDefinitionRef = fieldAccessPolicyDefinitionRef
-        self.fieldAccessPolicyDefinitionRef_nsprefix_ = None
+        self.fieldAccessPolicyDefinitionRef_nsprefix_ = "ipxact"
         self.access = access
-        self.access_nsprefix_ = None
+        self.access_nsprefix_ = "ipxact"
         self.modifiedWriteValue = modifiedWriteValue
-        self.modifiedWriteValue_nsprefix_ = None
+        self.modifiedWriteValue_nsprefix_ = "ipxact"
         self.writeValueConstraint = writeValueConstraint
-        self.writeValueConstraint_nsprefix_ = None
+        self.writeValueConstraint_nsprefix_ = "ipxact"
         self.readAction = readAction
-        self.readAction_nsprefix_ = None
+        self.readAction_nsprefix_ = "ipxact"
         self.readResponse = readResponse
-        self.readResponse_nsprefix_ = None
+        self.readResponse_nsprefix_ = "ipxact"
         self.broadcasts = broadcasts
-        self.broadcasts_nsprefix_ = None
+        self.broadcasts_nsprefix_ = "ipxact"
         self.accessRestrictions = accessRestrictions
-        self.accessRestrictions_nsprefix_ = None
+        self.accessRestrictions_nsprefix_ = "ipxact"
         self.testable = testable
-        self.testable_nsprefix_ = None
+        self.testable_nsprefix_ = "ipxact"
         if reserved is None:
             self.reserved = globals()["unsignedBitExpression"]("0")
         else:
             self.reserved = reserved
-        self.reserved_nsprefix_ = None
+        self.reserved_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -108270,12 +108270,12 @@ class broadcastsType133(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if broadcastTo is None:
             self.broadcastTo = []
         else:
             self.broadcastTo = broadcastTo
-        self.broadcastTo_nsprefix_ = None
+        self.broadcastTo_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -108448,33 +108448,33 @@ class broadcastToType134(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -108864,7 +108864,7 @@ class addressSpaceRefType135(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -109008,7 +109008,7 @@ class memoryMapRefType136(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -109154,7 +109154,7 @@ class testableType137(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.testConstraint = _cast(None, testConstraint)
         self.testConstraint_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -109347,32 +109347,32 @@ class registerDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -109836,37 +109836,37 @@ class registerFileDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if register is None:
             self.register = []
         else:
             self.register = register
-        self.register_nsprefix_ = None
+        self.register_nsprefix_ = "ipxact"
         if registerFile is None:
             self.registerFile = []
         else:
             self.registerFile = registerFile
-        self.registerFile_nsprefix_ = None
+        self.registerFile_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -110375,44 +110375,44 @@ class registerType139(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -111007,12 +111007,12 @@ class accessHandlesType140(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -111171,7 +111171,7 @@ class registerDefinitionRefType141(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -111362,46 +111362,46 @@ class addressBlockDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.usage = usage
         self.validate_usageType(self.usage)
-        self.usage_nsprefix_ = None
+        self.usage_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         if register is None:
             self.register = []
         else:
             self.register = register
-        self.register_nsprefix_ = None
+        self.register_nsprefix_ = "ipxact"
         if registerFile is None:
             self.registerFile = []
         else:
             self.registerFile = registerFile
-        self.registerFile_nsprefix_ = None
+        self.registerFile_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -112050,44 +112050,44 @@ class registerType142(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.accessHandles = accessHandles
-        self.accessHandles_nsprefix_ = None
+        self.accessHandles_nsprefix_ = "ipxact"
         self.array = array
-        self.array_nsprefix_ = None
+        self.array_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.registerDefinitionRef = registerDefinitionRef
-        self.registerDefinitionRef_nsprefix_ = None
+        self.registerDefinitionRef_nsprefix_ = "ipxact"
         self.typeIdentifier = typeIdentifier
-        self.typeIdentifier_nsprefix_ = None
+        self.typeIdentifier_nsprefix_ = "ipxact"
         self.size = size
-        self.size_nsprefix_ = None
+        self.size_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         if field is None:
             self.field = []
         else:
             self.field = field
-        self.field_nsprefix_ = None
+        self.field_nsprefix_ = "ipxact"
         self.alternateRegisters = alternateRegisters
-        self.alternateRegisters_nsprefix_ = None
+        self.alternateRegisters_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -112682,12 +112682,12 @@ class accessHandlesType143(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if accessHandle is None:
             self.accessHandle = []
         else:
             self.accessHandle = accessHandle
-        self.accessHandle_nsprefix_ = None
+        self.accessHandle_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -112846,7 +112846,7 @@ class registerDefinitionRefType144(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.typeDefinitions = _cast(None, typeDefinitions)
         self.typeDefinitions_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -113025,40 +113025,40 @@ class bankDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if addressBlock is None:
             self.addressBlock = []
         else:
             self.addressBlock = addressBlock
-        self.addressBlock_nsprefix_ = None
+        self.addressBlock_nsprefix_ = "ipxact"
         if bank is None:
             self.bank = []
         else:
             self.bank = bank
-        self.bank_nsprefix_ = None
+        self.bank_nsprefix_ = "ipxact"
         self.usage = usage
         self.validate_usageType(self.usage)
-        self.usage_nsprefix_ = None
+        self.usage_nsprefix_ = "ipxact"
         self.volatile = volatile
-        self.volatile_nsprefix_ = None
+        self.volatile_nsprefix_ = "ipxact"
         self.accessPolicies = accessPolicies
-        self.accessPolicies_nsprefix_ = None
+        self.accessPolicies_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -113607,7 +113607,7 @@ class bankType145(bankedDefinitionBankType):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("bankType145"), self).__init__(
             bankAlignment,
             id,
@@ -113626,7 +113626,7 @@ class bankType145(bankedDefinitionBankType):
             **kwargs_,
         )
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -113803,39 +113803,39 @@ class memoryMapDefinitionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if addressBlock is None:
             self.addressBlock = []
         else:
             self.addressBlock = addressBlock
-        self.addressBlock_nsprefix_ = None
+        self.addressBlock_nsprefix_ = "ipxact"
         if bank is None:
             self.bank = []
         else:
             self.bank = bank
-        self.bank_nsprefix_ = None
+        self.bank_nsprefix_ = "ipxact"
         if memoryRemap is None:
             self.memoryRemap = []
         else:
             self.memoryRemap = memoryRemap
-        self.memoryRemap_nsprefix_ = None
+        self.memoryRemap_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.shared = shared
         self.validate_sharedType(self.shared)
-        self.shared_nsprefix_ = None
+        self.shared_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -114342,31 +114342,31 @@ class memoryRemapDefinitionType146(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if addressBlock is None:
             self.addressBlock = []
         else:
             self.addressBlock = addressBlock
-        self.addressBlock_nsprefix_ = None
+        self.addressBlock_nsprefix_ = "ipxact"
         if bank is None:
             self.bank = []
         else:
             self.bank = bank
-        self.bank_nsprefix_ = None
+        self.bank_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -114772,18 +114772,18 @@ class accessPolicyType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if modeRef is None:
             self.modeRef = []
         else:
             self.modeRef = modeRef
-        self.modeRef_nsprefix_ = None
+        self.modeRef_nsprefix_ = "ipxact"
         self.access = access
-        self.access_nsprefix_ = None
+        self.access_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -115002,12 +115002,12 @@ class typeDefinitionsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if externalTypeDefinitions is None:
             self.externalTypeDefinitions = []
         else:
             self.externalTypeDefinitions = externalTypeDefinitions
-        self.externalTypeDefinitions_nsprefix_ = None
+        self.externalTypeDefinitions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -115166,12 +115166,12 @@ class powerDomainsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if powerDomain is None:
             self.powerDomain = []
         else:
             self.powerDomain = powerDomain
-        self.powerDomain_nsprefix_ = None
+        self.powerDomain_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -115348,25 +115348,25 @@ class powerDomainType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.alwaysOn = alwaysOn
-        self.alwaysOn_nsprefix_ = None
+        self.alwaysOn_nsprefix_ = "ipxact"
         self.subDomainOf = subDomainOf
-        self.subDomainOf_nsprefix_ = None
+        self.subDomainOf_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -115745,12 +115745,12 @@ class modesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if mode is None:
             self.mode = []
         else:
             self.mode = mode
-        self.mode_nsprefix_ = None
+        self.mode_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -115925,31 +115925,31 @@ class modeType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if portSlice is None:
             self.portSlice = []
         else:
             self.portSlice = portSlice
-        self.portSlice_nsprefix_ = None
+        self.portSlice_nsprefix_ = "ipxact"
         if fieldSlice is None:
             self.fieldSlice = []
         else:
             self.fieldSlice = fieldSlice
-        self.fieldSlice_nsprefix_ = None
+        self.fieldSlice_nsprefix_ = "ipxact"
         self.condition = condition
-        self.condition_nsprefix_ = None
+        self.condition_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -116353,26 +116353,26 @@ class portSliceType147(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.portRef = portRef
-        self.portRef_nsprefix_ = None
+        self.portRef_nsprefix_ = "ipxact"
         if subPortReference is None:
             self.subPortReference = []
         else:
             self.subPortReference = subPortReference
-        self.subPortReference_nsprefix_ = None
+        self.subPortReference_nsprefix_ = "ipxact"
         self.partSelect = partSelect
-        self.partSelect_nsprefix_ = None
+        self.partSelect_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -116725,7 +116725,7 @@ class portRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.portRef = _cast(None, portRef)
         self.portRef_nsprefix_ = None
 
@@ -116888,43 +116888,43 @@ class fieldSliceType148(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.addressSpaceRef = addressSpaceRef
-        self.addressSpaceRef_nsprefix_ = None
+        self.addressSpaceRef_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.memoryRemapRef = memoryRemapRef
-        self.memoryRemapRef_nsprefix_ = None
+        self.memoryRemapRef_nsprefix_ = "ipxact"
         if bankRef is None:
             self.bankRef = []
         else:
             self.bankRef = bankRef
-        self.bankRef_nsprefix_ = None
+        self.bankRef_nsprefix_ = "ipxact"
         self.addressBlockRef = addressBlockRef
-        self.addressBlockRef_nsprefix_ = None
+        self.addressBlockRef_nsprefix_ = "ipxact"
         if registerFileRef is None:
             self.registerFileRef = []
         else:
             self.registerFileRef = registerFileRef
-        self.registerFileRef_nsprefix_ = None
+        self.registerFileRef_nsprefix_ = "ipxact"
         self.registerRef = registerRef
-        self.registerRef_nsprefix_ = None
+        self.registerRef_nsprefix_ = "ipxact"
         self.alternateRegisterRef = alternateRegisterRef
-        self.alternateRegisterRef_nsprefix_ = None
+        self.alternateRegisterRef_nsprefix_ = "ipxact"
         self.fieldRef = fieldRef
-        self.fieldRef_nsprefix_ = None
+        self.fieldRef_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -117466,7 +117466,7 @@ class addressSpaceRefType149(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.addressSpaceRef = _cast(None, addressSpaceRef)
         self.addressSpaceRef_nsprefix_ = None
 
@@ -117610,7 +117610,7 @@ class memoryMapRefType150(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.memoryMapRef = _cast(None, memoryMapRef)
         self.memoryMapRef_nsprefix_ = None
 
@@ -117756,12 +117756,12 @@ class clearboxElementsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if clearboxElement is None:
             self.clearboxElement = []
         else:
             self.clearboxElement = clearboxElement
-        self.clearboxElement_nsprefix_ = None
+        self.clearboxElement_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -117922,12 +117922,12 @@ class cpusType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if cpu is None:
             self.cpu = []
         else:
             self.cpu = cpu
-        self.cpu_nsprefix_ = None
+        self.cpu_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -118116,36 +118116,36 @@ class cpuType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.width = width
-        self.width_nsprefix_ = None
+        self.width_nsprefix_ = "ipxact"
         self.regions = regions
-        self.regions_nsprefix_ = None
+        self.regions_nsprefix_ = "ipxact"
         self.addressUnitBits = addressUnitBits
-        self.addressUnitBits_nsprefix_ = None
+        self.addressUnitBits_nsprefix_ = "ipxact"
         if executableImage is None:
             self.executableImage = []
         else:
             self.executableImage = executableImage
-        self.executableImage_nsprefix_ = None
+        self.executableImage_nsprefix_ = "ipxact"
         self.memoryMapRef = memoryMapRef
-        self.memoryMapRef_nsprefix_ = None
+        self.memoryMapRef_nsprefix_ = "ipxact"
         self.parameters = parameters
-        self.parameters_nsprefix_ = None
+        self.parameters_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -118634,12 +118634,12 @@ class regionsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if region is None:
             self.region = []
         else:
             self.region = region
-        self.region_nsprefix_ = None
+        self.region_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -118814,23 +118814,23 @@ class regionType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.addressOffset = addressOffset
-        self.addressOffset_nsprefix_ = None
+        self.addressOffset_nsprefix_ = "ipxact"
         self.range_ = range_
-        self.range__nsprefix_ = None
+        self.range__nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -119178,12 +119178,12 @@ class resetTypesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if resetType is None:
             self.resetType = []
         else:
             self.resetType = resetType
-        self.resetType_nsprefix_ = None
+        self.resetType_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -119354,19 +119354,19 @@ class resetTypeType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -119662,12 +119662,12 @@ class moduleParametersType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if moduleParameter is None:
             self.moduleParameter = []
         else:
             self.moduleParameter = moduleParameter
-        self.moduleParameter_nsprefix_ = None
+        self.moduleParameter_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -119828,12 +119828,12 @@ class clearboxElementRefsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if clearboxElementRef is None:
             self.clearboxElementRef = []
         else:
             self.clearboxElementRef = clearboxElementRef
-        self.clearboxElementRef_nsprefix_ = None
+        self.clearboxElementRef_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -119999,12 +119999,12 @@ class viewsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if view is None:
             self.view = []
         else:
             self.view = view
-        self.view_nsprefix_ = None
+        self.view_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -120180,30 +120180,30 @@ class viewType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if envIdentifier is None:
             self.envIdentifier = []
         else:
             self.envIdentifier = envIdentifier
-        self.envIdentifier_nsprefix_ = None
+        self.envIdentifier_nsprefix_ = "ipxact"
         self.componentInstantiationRef = componentInstantiationRef
-        self.componentInstantiationRef_nsprefix_ = None
+        self.componentInstantiationRef_nsprefix_ = "ipxact"
         self.designInstantiationRef = designInstantiationRef
-        self.designInstantiationRef_nsprefix_ = None
+        self.designInstantiationRef_nsprefix_ = "ipxact"
         self.designConfigurationInstantiationRef = designConfigurationInstantiationRef
-        self.designConfigurationInstantiationRef_nsprefix_ = None
+        self.designConfigurationInstantiationRef_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -120634,7 +120634,7 @@ class envIdentifierType151(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -120803,22 +120803,22 @@ class instantiationsType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if componentInstantiation is None:
             self.componentInstantiation = []
         else:
             self.componentInstantiation = componentInstantiation
-        self.componentInstantiation_nsprefix_ = None
+        self.componentInstantiation_nsprefix_ = "ipxact"
         if designInstantiation is None:
             self.designInstantiation = []
         else:
             self.designInstantiation = designInstantiation
-        self.designInstantiation_nsprefix_ = None
+        self.designInstantiation_nsprefix_ = "ipxact"
         if designConfigurationInstantiation is None:
             self.designConfigurationInstantiation = []
         else:
             self.designConfigurationInstantiation = designConfigurationInstantiation
-        self.designConfigurationInstantiation_nsprefix_ = None
+        self.designConfigurationInstantiation_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -121049,12 +121049,12 @@ class portsType152(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if port is None:
             self.port = []
         else:
             self.port = port
-        self.port_nsprefix_ = None
+        self.port_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -121213,12 +121213,12 @@ class viewsType153(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if view is None:
             self.view = []
         else:
             self.view = view
-        self.view_nsprefix_ = None
+        self.view_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -121392,26 +121392,26 @@ class viewType154(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         if envIdentifier is None:
             self.envIdentifier = []
         else:
             self.envIdentifier = envIdentifier
-        self.envIdentifier_nsprefix_ = None
+        self.envIdentifier_nsprefix_ = "ipxact"
         self.componentInstantiationRef = componentInstantiationRef
-        self.componentInstantiationRef_nsprefix_ = None
+        self.componentInstantiationRef_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -121774,7 +121774,7 @@ class envIdentifierType155(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -121932,12 +121932,12 @@ class instantiationsType156(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if componentInstantiation is None:
             self.componentInstantiation = []
         else:
             self.componentInstantiation = componentInstantiation
-        self.componentInstantiation_nsprefix_ = None
+        self.componentInstantiation_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -122096,12 +122096,12 @@ class portsType157(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if port is None:
             self.port = []
         else:
             self.port = port
-        self.port_nsprefix_ = None
+        self.port_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -122271,18 +122271,18 @@ class interconnectionConfigurationType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.interconnectionRef = interconnectionRef
-        self.interconnectionRef_nsprefix_ = None
+        self.interconnectionRef_nsprefix_ = "ipxact"
         if abstractorInstances is None:
             self.abstractorInstances = []
         else:
             self.abstractorInstances = abstractorInstances
-        self.abstractorInstances_nsprefix_ = None
+        self.abstractorInstances_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -122540,21 +122540,21 @@ class abstractorInstancesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         if interfaceRef is None:
             self.interfaceRef = []
         else:
             self.interfaceRef = interfaceRef
-        self.interfaceRef_nsprefix_ = None
+        self.interfaceRef_nsprefix_ = "ipxact"
         if abstractorInstance is None:
             self.abstractorInstance = []
         else:
             self.abstractorInstance = abstractorInstance
-        self.abstractorInstance_nsprefix_ = None
+        self.abstractorInstance_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -122799,7 +122799,7 @@ class interfaceRefType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.componentRef = _cast(None, componentRef)
         self.componentRef_nsprefix_ = None
         self.busRef = _cast(None, busRef)
@@ -122807,7 +122807,7 @@ class interfaceRefType(GeneratedsSuper):
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -123030,21 +123030,21 @@ class abstractorInstanceType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.instanceName = instanceName
-        self.instanceName_nsprefix_ = None
+        self.instanceName_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.abstractorRef = abstractorRef
-        self.abstractorRef_nsprefix_ = None
+        self.abstractorRef_nsprefix_ = "ipxact"
         self.viewName = viewName
-        self.viewName_nsprefix_ = None
+        self.viewName_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -123383,15 +123383,15 @@ class viewConfigurationType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.instanceName = instanceName
-        self.instanceName_nsprefix_ = None
+        self.instanceName_nsprefix_ = "ipxact"
         self.view = view
-        self.view_nsprefix_ = None
+        self.view_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -123618,11 +123618,11 @@ class viewType158(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.viewRef = _cast(None, viewRef)
         self.viewRef_nsprefix_ = None
         self.configurableElementValues = configurableElementValues
-        self.configurableElementValues_nsprefix_ = None
+        self.configurableElementValues_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -123790,7 +123790,7 @@ class abstractorModeType159(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.group = _cast(None, group)
         self.group_nsprefix_ = None
         self.valueOf_ = valueOf_
@@ -123960,12 +123960,12 @@ class abstractorInterfacesType(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if abstractorInterface is None:
             self.abstractorInterface = []
         else:
             self.abstractorInterface = abstractorInterface
-        self.abstractorInterface_nsprefix_ = None
+        self.abstractorInterface_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -124129,12 +124129,12 @@ class modesType160(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if mode is None:
             self.mode = []
         else:
             self.mode = mode
-        self.mode_nsprefix_ = None
+        self.mode_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -124303,19 +124303,19 @@ class modeType161(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -124609,12 +124609,12 @@ class viewsType162(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if view is None:
             self.view = []
         else:
             self.view = view
-        self.view_nsprefix_ = None
+        self.view_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -124783,19 +124783,19 @@ class viewType163(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -125091,12 +125091,12 @@ class resetTypesType164(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         if resetType is None:
             self.resetType = []
         else:
             self.resetType = resetType
-        self.resetType_nsprefix_ = None
+        self.resetType_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -125267,19 +125267,19 @@ class resetTypeType165(GeneratedsSuper):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         self.id = _cast(None, id)
         self.id_nsprefix_ = None
         self.name = name
-        self.name_nsprefix_ = None
+        self.name_nsprefix_ = "ipxact"
         self.displayName = displayName
-        self.displayName_nsprefix_ = None
+        self.displayName_nsprefix_ = "ipxact"
         self.shortDescription = shortDescription
-        self.shortDescription_nsprefix_ = None
+        self.shortDescription_nsprefix_ = "ipxact"
         self.description = description
-        self.description_nsprefix_ = None
+        self.description_nsprefix_ = "ipxact"
         self.vendorExtensions = vendorExtensions
-        self.vendorExtensions_nsprefix_ = None
+        self.vendorExtensions_nsprefix_ = "ipxact"
 
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -128285,7 +128285,7 @@ class widthType79(unsignedPositiveIntExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("widthType79"), self).__init__(minimum, maximum, valueOf_, **kwargs_)
         self.allBits = _cast(bool, allBits)
         self.allBits_nsprefix_ = None
@@ -128446,7 +128446,7 @@ class widthType77(unsignedPositiveIntExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("widthType77"), self).__init__(minimum, maximum, valueOf_, **kwargs_)
         self.allBits = _cast(bool, allBits)
         self.allBits_nsprefix_ = None
@@ -128607,7 +128607,7 @@ class widthType75(unsignedPositiveIntExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("widthType75"), self).__init__(minimum, maximum, valueOf_, **kwargs_)
         self.allBits = _cast(bool, allBits)
         self.allBits_nsprefix_ = None
@@ -128768,7 +128768,7 @@ class widthType(unsignedPositiveIntExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("widthType"), self).__init__(minimum, maximum, valueOf_, **kwargs_)
         self.allBits = _cast(bool, allBits)
         self.allBits_nsprefix_ = None
@@ -128921,7 +128921,7 @@ class remapAddressType58(unsignedLongintExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("remapAddressType58"), self).__init__(minimum, maximum, **kwargs_)
 
     def factory(*args_, **kwargs_):
@@ -129050,7 +129050,7 @@ class remapAddressType(unsignedLongintExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("remapAddressType"), self).__init__(minimum, maximum, **kwargs_)
 
     def factory(*args_, **kwargs_):
@@ -129179,7 +129179,7 @@ class flagsType(stringExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("flagsType"), self).__init__(valueOf_, **kwargs_)
         self.append = _cast(bool, append)
         self.append_nsprefix_ = None
@@ -129334,7 +129334,7 @@ class clockPulseDurationType(realExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("clockPulseDurationType"), self).__init__(
             minimum, maximum, valueOf_, **kwargs_
         )
@@ -129516,7 +129516,7 @@ class clockPulseOffsetType(realExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("clockPulseOffsetType"), self).__init__(
             minimum, maximum, valueOf_, **kwargs_
         )
@@ -129698,7 +129698,7 @@ class clockPeriodType(realExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("clockPeriodType"), self).__init__(
             minimum, maximum, valueOf_, **kwargs_
         )
@@ -129878,7 +129878,7 @@ class singleShotDurationType(realExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("singleShotDurationType"), self).__init__(minimum, maximum, **kwargs_)
         self.units = _cast(None, units)
         self.units_nsprefix_ = None
@@ -130054,7 +130054,7 @@ class singleShotValueType(unsignedBitVectorExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("singleShotValueType"), self).__init__(**kwargs_)
 
     def factory(*args_, **kwargs_):
@@ -130183,7 +130183,7 @@ class singleShotOffsetType(realExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("singleShotOffsetType"), self).__init__(minimum, maximum, **kwargs_)
         self.units = _cast(None, units)
         self.units_nsprefix_ = None
@@ -130361,7 +130361,7 @@ class indexType(unsignedIntExpression):
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get("parent_object_")
-        self.ns_prefix_ = None
+        self.ns_prefix_ = "ipxact"
         super(globals().get("indexType"), self).__init__(minimum, maximum, valueOf_, **kwargs_)
         self.id = _cast(None, id)
         self.id_nsprefix_ = None

@@ -1,0 +1,28 @@
+From 8f8f57ad54cfdafdc3c61b6c907c044da733f9a6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Wojciech=20Ko=C5=82odziej?=
+ <wkolodziej@internships.antmicro.com>
+Date: Fri, 26 Jun 2026 11:34:29 +0200
+Subject: [PATCH] Fix: Enable elementFormDefault to propagate namespace to
+ child elements
+
+---
+ generateDS.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/generateDS.py b/generateDS.py
+index d9d232a..db33c62 100755
+--- a/generateDS.py
++++ b/generateDS.py
+@@ -890,6 +890,8 @@ class XschemaElement(XschemaElementBase):
+         )
+ 
+     def addChild(self, element):
++        if element.elementFormDefault is None:
++            element.elementFormDefault = self.elementFormDefault
+         self.children.append(element)
+ 
+     def getChildren(self):
+-- 
+2.39.5
+
+
