@@ -1,12 +1,27 @@
-from topwrap.model.design import Design
-from topwrap.plugin.base import BasePlugin, BuildContext
-from renode_plugin.repl import RenodeDeviceFieldResolve, create_resolvers_mod, parse_output_maps, create_resolvers, RenodeMapping, resolve_memorymap, render_hex, RENODE_GUEST_PAGE_SIZE, RenodePlatform, REPL_PREAMBLE, resolve_top_output
-from typing_extensions import cast
-
 import logging
 from pathlib import Path
 
+from topwrap.model.design import Design
+from topwrap.plugin.base import BasePlugin, BuildContext
+from typing_extensions import cast
+
+from renode_plugin.repl import (
+    RENODE_GUEST_PAGE_SIZE,
+    REPL_PREAMBLE,
+    RenodeDeviceFieldResolve,
+    RenodeMapping,
+    RenodePlatform,
+    create_resolvers,
+    create_resolvers_mod,
+    parse_output_maps,
+    render_hex,
+    resolve_memorymap,
+    resolve_top_output,
+)
+from renode_plugin.resc import RESC_Simple
+
 logger = logging.getLogger(__name__)
+
 
 class RenodePeripheralGen(BasePlugin):
     def __init__(self, *args, **kwargs):
@@ -69,6 +84,11 @@ class RenodePeripheralGen(BasePlugin):
             src = platform.render_config(REPL_PREAMBLE, output.includes, output.device_filter)
             self.outputs[output.filename] = src
 
+        top_output = resolve_top_output(output_maps)
+        resc_gen = RESC_Simple.from_top_module(top_module, top_output.filename, renode_mapping)
+        self.outputs[str(Path(top_output.filename).with_suffix(".resc"))] = (
+            resc_gen.render_template()
+        )
 
     def pre_output_writing(self, ctx: BuildContext, target_dir: Path):
         for filename, src in self.outputs.items():
@@ -76,6 +96,8 @@ class RenodePeripheralGen(BasePlugin):
             if out_path.exists() and out_path.is_dir():
                 logger.error("cannot write to a directory")
                 exit(1)
-            logging.info(f"writing REPL: {out_path}")
+            if out_path.suffix == ".repl":
+                logger.info(f"writing REPL: {out_path}")
+            if out_path.suffix == ".resc":
+                logger.info(f"writing RESC: {out_path}")
             out_path.write_text(src)
-

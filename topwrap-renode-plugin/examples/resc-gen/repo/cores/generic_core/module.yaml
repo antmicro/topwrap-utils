@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+id:
+  library: libdefault
+  name: generic_core
+  vendor: vendor
+
+clocks:
+  cpu:
+    signal: clk
+
+resets:
+  cpu:
+    signal: rst_l
+    polarity: active low
+
+interfaces:
+  ifu_axi:
+    mode: manager
+    clock: cpu
+    reset: cpu
+    type:
+      name: AXI4
+
+signals:
+  in:
+  - {name: clk}
+  - {name: rst_l}
+

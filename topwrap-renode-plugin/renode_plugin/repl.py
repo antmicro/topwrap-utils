@@ -8,7 +8,6 @@ from pathlib import Path
 from re import compile
 from re import escape as escape_regex
 
-
 from topwrap.interconnects.axi import AXIInterconnect
 from topwrap.interconnects.wishbone_rr import WishboneInterconnect
 from topwrap.model.connections import (
@@ -25,7 +24,6 @@ from topwrap.model.interconnect import (
 )
 from topwrap.model.misc import Identifier, ObjectId, VariableName
 from topwrap.model.module import Module
-from topwrap.plugin.base import BasePlugin, BuildContext
 from typing_extensions import Any, Callable, Iterable, Optional, Union, cast
 
 logger = logging.getLogger(__name__)
@@ -668,8 +666,8 @@ class RenodePlatform:
 
         return "\n\n".join(lines)
 
-def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
 
+def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
     if len(outputs) == 1:
         return outputs[0]
 
@@ -687,15 +685,19 @@ def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
                 can_resolve.add(output)
 
         if not can_resolve:
-            raise ValueError("it's impossible to resolve the top level REPL, since dependencies cannot be met")
+            raise ValueError(
+                "it's impossible to resolve the top level REPL, since dependencies cannot be met"
+            )
 
         for output in can_resolve:
             remaining.remove(output)
             resolved.add(output)
 
         if not remaining and len(can_resolve) >= 1:
-            raise ValueError("cannot determine the top output REPL, since multiple files can be used indipendantly")
-        
+            raise ValueError(
+                "cannot determine the top output REPL, since multiple files can be "
+                "used indipendantly"
+            )
+
         if not remaining:
             return lookup[can_resolve.pop()]
-

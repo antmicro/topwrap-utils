@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+
+:name: {{name}}
+$name?="{{name}}"
+
+# Setup
+
+{% if cpu is defined %}
+$elf0?=$ORIGIN/{{cpu.elf}}
+{% endif %}
+
+$platform?=$ORIGIN/{{repl_path}}
+
+path add $ORIGIN
+using sysbus
+
+mach create $name
+machine LoadPlatformDescription $platform
+
+{% if cpu is defined %}
+sysbus LoadELF $elf0 cpu={{cpu.name}}
+{% endif %}
+
+{% for analyzer in analyzers %}
+showAnalyzer uart
+{% endfor %}
+
+start
+

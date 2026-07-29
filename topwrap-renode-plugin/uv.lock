@@ -1726,6 +1726,7 @@ name = "renode-plugin"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "jinja2" },
     { name = "topwrap" },
 ]
 
@@ -1738,6 +1739,7 @@ lint = [
 [package.metadata]
 requires-dist = [
     { name = "codespell", marker = "extra == 'lint'", specifier = "==2.3.0" },
+    { name = "jinja2", specifier = ">=3.1.2" },
     { name = "ruff", marker = "extra == 'lint'", specifier = "==0.12.1" },
     { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=24f3c62fab5216507d7209dc17005b6bc88019a0" },
 ]
