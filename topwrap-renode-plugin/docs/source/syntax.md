@@ -25,25 +25,31 @@ In those scenarios, you have to target any IP-core by it's module ID.
 
 ```yaml
 # ... 
-extensions:                     # The "extensions" tag
-  renode_peripheral_gen:        # Metadata field for this plugin
-    supported_peripherals:      # List of "IP-core to Renode peripheral"-mappings (optional)
-      - target:                 # Fully qualified module ID (required)
+extensions:                              # The "extensions" tag
+  renode_peripheral_gen:                 # Metadata field for this plugin
+    supported_peripherals:               # List of "IP-core to Renode peripheral"-mappings (optional)
+      - target:                          # Fully qualified module ID (required)
           name: "..."
           vendor: "..."
           library: "..."
-        renode_device: "..."    # The name of the Renode peripheral (required)
-        map:                    # Mapping between the peripheral's configuration
-                                # fields and properties of the instantiated
-                                # ip-core (optional)
-          - dest: "..."         #  Renode-peripheral config
-            src: "..."          #  Topwrap design property
-    output:                     # A list of configuration files to generate (optional)
-      - filename: "..."         #  Output file name
-        filter: []              #  IP-cores to include
-        includes: []            #  List of other .repl files to include
+        renode_device: "..."             # The name of the Renode peripheral (required)
+        map:                             # Mapping between the peripheral's configuration
+                                         # fields and properties of the instantiated
+                                         # ip-core (optional)
+          - dest: "..."                  #  Renode-peripheral config
+            src: "..."                   #  Topwrap design property
+    output:                              # A list of configuration files to generate (optional)
+      - filename: "..."                  #  Output file name
+        filter: []                       #  IP-cores to include
+        includes: []                     #  List of other .repl files to include
+  renode_resc:                           # Settings related to RESC file generation (optional)
+      cpus:                              # List of IP-cores to mark as CPU's, with relative path
+                                         # to ELF-files.
+        - ["cpu_core", "./path/to/elf"]
+                                         # containing binary.
+      analyze: []                        # List of IP cores to use `showAnalyzer` on 
+      features: []                       # List of features to add to the RESC
 ```
-
 
 ## Plugin metadata
 
@@ -105,4 +111,26 @@ output:
     filter: ["C"]                 # Only use C
     includes: ["A_and_B.repl"]    # Include previous file 
 ```
+
+## Renode RESC generation
+
+RESC files are always generated next to the REPL-file.
+In order to be useful, you need to specify at least one CPU and a binary to run.
+You can optionally add analyzers to peripherals, which will output useful information to the console.
+
+The `renode_resc` key is used in the design file to control the what's included in the `.resc` file.
+The current format is limited to a single cpu and a list of mapped IP-cores for which to setup analyzers. 
+
+The `cpu` key is a list containing two items: the name of the IP core which acts as the CPU and the path to an `.elf`-file containing the binary to run (relative to the output directory of the `topwrap` build folder).
+The `analyze` key is a list of IP-cores which should be "analyzed" (i.e. used with `showAnalyzer`).
+This is necessary for UART peripherals to also see their output.
+
+What's contained in the RESC file can controlled via the `features` key, which is a list of feature tags.
+The supported feature tags are:
+
+| Tag name      | Description |
+|-|-|
+| `no_run`      | The RESC file will not instruct Renode to run a simulation. This is useful if an external tool invokes `run` |
+| `reset_macro` | The RESC file will contain a macro, `$reset`, which will instruct Renode reset the CPU and upload the ELF-file binaries. |
+| `mem_mailbox` | This will add an watcher listening on address `0x80f80000`, which will log any values written to that address. |
 
