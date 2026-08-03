@@ -693,7 +693,7 @@ def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
             remaining.remove(output)
             resolved.add(output)
 
-        if not remaining and len(can_resolve) >= 1:
+        if not remaining and len(can_resolve) > 1:
             raise ValueError(
                 "cannot determine the top output REPL, since multiple files can be "
                 "used indipendantly"

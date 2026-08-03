@@ -19,6 +19,8 @@ TEMPLATE_NAME = "cpu_uart.j2"
 # here (or at some point before any hooks are invoked).
 TEMPLATE = Template((TEMPLATES_DIR / TEMPLATE_NAME).read_text())
 
+FEATURES = frozenset(["no_run", "reset_macro", "mem_mailbox"])
+
 
 @cache
 def _load_template(name: str) -> Template:
@@ -38,28 +40,47 @@ class RESC_Simple:
         self,
         design_name: str,
         repl_path: str,
-        cpu: Optional[str] = None,
-        elf: Optional[str] = None,
+        cpus: Optional[list[str]] = None,
+        elfs: Optional[list[str]] = None,
         analyzers: Optional[list[str]] = None,
+        features: Optional[set[str]] = None,
     ):
         self._name = design_name
-        self._cpu = cpu
+        self._cpus = cpus
         self._analyzers = [] if analyzers is None else analyzers
-        self._elf = elf
+        self._elfs = elfs
         self._repl_path = repl_path
+        self._features = features
 
         if not self._is_valid():
-            raise ValueError(f"Missing elf file for CPU {self._cpu}")
+            raise ValueError("Missing elf file for one or more CPUs")
 
     def _is_valid(self) -> bool:
-        no_cpu = self._cpu is None
-        return no_cpu or self._elf is not None
+        return self._cpus is None or (self._elfs is not None and len(self._cpus) == len(self._elfs))
 
     def render_template(self) -> str:
-        keys = {"name": self._name, "repl_path": self._repl_path, "analyzers": self._analyzers}
+        keys = {
+            "name": self._name,
+            "repl_path": self._repl_path,
+            "analyzers": self._analyzers,
+            "start": True,
+            "reset_macro": False,
+            "add_mem_mailbox": False,
+        }
 
-        if self._cpu is not None and self._elf is not None:
-            keys.update({"cpu": CPUInfo(self._cpu, self._elf)})
+        if self._cpus is not None and self._elfs is not None:
+            cpus = []
+            for cpu, elf in zip(self._cpus, self._elfs, strict=False):
+                cpus.append(CPUInfo(cpu, elf))
+            keys.update({"cpus": cpus})
+
+        if self._features:
+            if "no_run" in self._features:
+                keys["start"] = False
+            if "reset_macro" in self._features:
+                keys["reset_macro"] = True
+            if "mem_mailbox" in self._features:
+                keys["add_mem_mailbox"] = True
 
         return TEMPLATE.render(**keys)
 
@@ -83,26 +104,38 @@ class RESC_Simple:
 
         collected_keys: set[str] = set()
 
-        cpu_name = None
-        elf_path = None
+        cpu_names = []
+        elf_paths = []
         analyzers = []
+        feature_set = None
 
-        if "cpu" in data:
-            collected_keys.add("cpu")
+        if "cpus" in data:
+            collected_keys.add("cpus")
 
-            cpu_info = data["cpu"]
+            cpu_info = data["cpus"]
 
-            if not isinstance(cpu_info, list) and not all(isinstance(i, str) for i in cpu_info):
+            if (
+                not isinstance(cpu_info, list)
+                and not all(isinstance(entry, list) for entry in cpu_info)
+                and not all(all(isinstance(item, str) for item in entry) for entry in cpu_info)
+            ):
                 raise TypeError(
-                    f"extension field {extension_data.name}.cpu is not a list of strings"
+                    f"extension field {extension_data.name}.cpus is not a list of cpu-elf pairs"
                 )
 
-            if len(cpu_info) != 2:
+            if not all(len(entry) == 2 for entry in cpu_info):
                 raise ValueError(
-                    f"extension field {extension_data.name}.cpu can only contain two items"
+                    f"extension field {extension_data.name}.cpus[*] can only contain two items"
                 )
 
-            cpu_name, elf_path = cast(list[str], cpu_info)
+            for entry in cast(list[list[str]], cpu_info):
+                cpu_name, elf_path = entry
+
+                if cpu_name not in renode_map:
+                    raise ValueError(f"{cpu_name} does not have a Renode peripheral map")
+
+                cpu_names.append(cpu_name)
+                elf_paths.append(elf_path)
 
         if "analyze" in data:
             collected_keys.add("analyze")
@@ -118,13 +151,28 @@ class RESC_Simple:
 
             analyzers = cast(list[str], analyzers_list)
 
-        if cpu_name and cpu_name not in renode_map:
-            raise ValueError(f"{cpu_name} does not have a Renode peripheral map")
+        if "features" in data:
+            features = data["features"]
+            if not isinstance(features, list) and not all(isinstance(f, str) for f in features):
+                raise TypeError(
+                    f"extension field {extension_data.name}.features is not a list of strings"
+                )
+
+            for f in features:
+                if f not in FEATURES:
+                    raise ValueError(f"Unknown feature {f}")
+
+            feature_set = set(cast(list[str], features))
 
         for analyzer in analyzers:
             if analyzer not in renode_map:
                 raise ValueError(f"{analyzer} does not have a Renode peripheral map")
 
         return RESC_Simple(
-            design_name=name, repl_path=repl_path, cpu=cpu_name, elf=elf_path, analyzers=analyzers
+            design_name=name,
+            repl_path=repl_path,
+            cpus=cpu_names,
+            elfs=elf_paths,
+            analyzers=analyzers,
+            features=feature_set,
         )

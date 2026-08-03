@@ -17,13 +17,16 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "24f3c62fab5216507d7209dc17005b6bc88019a0" }
+topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "5ce07de4387ca7061304dc0768be7a44cc24f8d7" }
 
 [project.entry-points."topwrap.plugins"]
 renode_plugin = "renode_plugin.main:RenodePeripheralGen"
 
 [tool.setuptools]
 packages = ["renode_plugin"]
+
+[tool.setuptools.package-data]
+renode_plugin = ["templates/*.j2"]
 
 [project.optional-dependencies]
 lint = [

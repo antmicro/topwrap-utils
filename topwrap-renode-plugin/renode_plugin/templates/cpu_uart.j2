@@ -6,9 +6,9 @@ $name?="{{name}}"
 
 # Setup
 
-{% if cpu is defined %}
-$elf0?=$ORIGIN/{{cpu.elf}}
-{% endif %}
+{% for cpu in cpus %}
+$elf{{loop.index0}}?=$ORIGIN/{{cpu.elf}}
+{% endfor %}
 
 $platform?=$ORIGIN/{{repl_path}}
 
@@ -18,13 +18,48 @@ using sysbus
 mach create $name
 machine LoadPlatformDescription $platform
 
-{% if cpu is defined %}
-sysbus LoadELF $elf0 cpu={{cpu.name}}
+{% if add_mem_mailbox %}
+machine CreateVirtualConsole "mem_mailbox"
+python """
+from Antmicro.Renode.Peripherals.Bus import Access, SysbusAccessWidth
+mem_mailbox = monitor.Machine["sysbus.mem_mailbox"]
+bus = monitor.Machine.SystemBus
+
+def handle_char(_, __, ___, value):
+    if(value not in (0x1, 0xFF) and value < 0xFF):
+        mem_mailbox.DisplayChar(value)
+    else:
+        for x in [ord(c) for c in "\n[[mailbox: Finished, requested simulation end]]"]:
+            mem_mailbox.DisplayChar(x)
+        mem_mailbox.DebugLog("FINISHED")
+
+bus.AddWatchpointHook(0x80f80000, SysbusAccessWidth.DoubleWord, Access.Write, handle_char)
+bus.AddWatchpointHook(0x80f80000, SysbusAccessWidth.Byte, Access.Write, handle_char)
+"""
+showAnalyzer mem_mailbox
+{% endif %}
+
+{% if reset_macro %}
+macro reset
+"""
+{% endif %}
+{% for cpu in cpus %}
+sysbus LoadELF $elf{{loop.index0}} cpu={{cpu.name}}
+{% endfor %}
+{% if reset_macro %}
+"""
 {% endif %}
 
 {% for analyzer in analyzers %}
-showAnalyzer uart
+showAnalyzer {{analyzer}}
 {% endfor %}
 
+{% if reset_macro %}
+runMacro $reset
+{% endif %}
+
+{% if start %}
 start
+{% endif %}
+
 
