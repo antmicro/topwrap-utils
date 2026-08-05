@@ -1,0 +1,19 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+load("@rules_hdl//verilog:defs.bzl", "verilog_library")
+load("//:defs.bzl", "topwrap_core")
+
+verilog_library(
+    name = "manual_ip_lib",
+    srcs = ["manual_ip.v"],
+    visibility = ["//visibility:public"],
+)
+
+# Name must match module.yaml's id.name and any repo[...]:... reference.
+topwrap_core(
+    name = "manual_ip",
+    yaml = "module.yaml",
+    deps = [":manual_ip_lib"],  # optional; omit if no HDL is Bazel-tracked
+    visibility = ["//visibility:public"],
+)

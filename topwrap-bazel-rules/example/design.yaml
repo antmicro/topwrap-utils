@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+ips:
+  inst1:
+    file: repo[my_library]:parsed_ip
+  inst2:
+    file: repo[my_library]:manual_ip
+
+external:
+  ports:
+    in:
+      - inst1_clk
+      - inst1_rst
+      - inst2_a
+      - inst2_b
+    out:
+      - inst1_led
+      - inst2_y
+
+connections:
+  ports:
+    inst1:
+      clk: inst1_clk
+      rst: inst1_rst
+      led: inst1_led
+    inst2:
+      a: inst2_a
+      b: inst2_b
+      y: inst2_y

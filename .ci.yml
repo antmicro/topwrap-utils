@@ -40,6 +40,19 @@ axi_interconnect_generator_lint:
     - just install-debian-deps
     - just test-lint
 
+# Bazel rules
+bazel_rules_example:
+  stage: test
+  variables:
+    SCALENODE_DISK: 20
+  before_script:
+    - apt-get update && apt-get install -y curl ca-certificates git
+    - curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64
+    - chmod +x /usr/local/bin/bazel
+  script:
+    - cd topwrap-bazel-rules
+    - bazel build //example:my_design
+
 # Renode plugin
 renode_plugin_lint:
   <<: *common_only

@@ -1,0 +1,65 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+load("@rules_hdl//verilog:defs.bzl", "verilog_library")
+load("//:defs.bzl", "topwrap_design", "topwrap_design_gui", "topwrap_library", "topwrap_parse_sources")
+
+# 1. Parse an existing IP verilog_library into topwrap core descriptions.
+topwrap_parse_sources(
+    name = "my_parsed_ip",
+    deps = ["//example/parsed_ip:parsed_ip_lib"],
+)
+
+# 2. Assemble a library from a manualy written and a parsed core
+topwrap_library(
+    name = "my_library",
+    cores = [
+        ":my_parsed_ip",
+        "//example/manual_ip:manual_ip",
+    ],
+)
+
+# 3. Generate the top-level wrapper
+topwrap_design(
+    name = "my_design",
+    design = "design.yaml",
+    deps = [":my_library"],
+)
+
+# 4. bazel run //example:my_design_gui - opens the GUI on this design.
+topwrap_design_gui(
+    name = "my_design_gui",
+    design = "design.yaml",
+    deps = [":my_library"],
+)
+
+# 5. Topwrap library packaging
+
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+
+pkg_tar(
+    name = "my_library_pkg",
+    srcs = [":my_library"],
+)
+
+# 6. Synthesis + place-and-route (an example consumer)
+
+load("@rules_hdl//place_and_route:build_defs.bzl", "place_and_route")
+load("@rules_hdl//synthesis:defs.bzl", "synthesize_rtl")
+
+synthesize_rtl(
+    name = "my_design_synth",
+    top_module = "top",
+    deps = [":my_design"],
+)
+
+place_and_route(
+    name = "my_design_pnr",
+    clock_period = "10",
+    core_padding_microns = 20,
+    die_height_microns = 200,
+    die_width_microns = 200,
+    placement_density = "0.7",
+    sdc = "my_design.sdc",
+    synthesized_rtl = ":my_design_synth",
+)

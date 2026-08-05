@@ -1,0 +1,78 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+module(name = "bazel_topwrap")
+
+bazel_dep(name = "rules_python", version = "0.40.0")
+bazel_dep(name = "rules_shell", version = "0.3.0")
+bazel_dep(name = "rules_pkg", version = "1.2.0")
+
+# rules_hdl isn't on the Bazel Central Registry; its main branch has its
+# own MODULE.bazel, so pull it in via git_override.
+bazel_dep(name = "rules_hdl")
+git_override(
+    module_name = "rules_hdl",
+    commit = "94e28d604085707499fd5aa1fd96519b1acda216",
+    remote = "https://github.com/hdl/bazel_rules_hdl.git",
+)
+
+# Pinned to Bazel 8.7.0 (see .bazelversion): rules_cc relies on legacy
+# providers Bazel 9 removed.
+single_version_override(
+    module_name = "rules_cc",
+    version = "0.2.11",
+)
+
+# OpenROAD needs C++20; system gcc defaults to c++17.
+bazel_dep(name = "toolchains_llvm", version = "1.4.0")
+
+llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
+llvm.toolchain(
+    cxx_standard = {"": "c++20"},
+    llvm_version = "19.1.7",
+)
+use_repo(llvm, "llvm_toolchain")
+
+register_toolchains("@llvm_toolchain//:all")
+
+bazel_dep(name = "openroad", repo_name = "org_theopenroadproject")
+bazel_dep(name = "rules_7zip", version = "0.0.1")
+
+git_override(
+    module_name = "rules_7zip",
+    commit = "03a10b5796eac0aed122cf52064ed15785610857",
+    remote = "https://github.com/zaucy/rules_7zip.git",
+)
+
+git_override(
+    module_name = "openroad",
+    commit = "d046747ad39bfc5e032eb5c548ad8dfb441e228b",
+    init_submodules = True,
+    patch_strip = 1,
+    patches = ["//dependency_support/openroad:slang_path.patch"],
+    remote = "https://github.com/The-OpenROAD-Project/OpenROAD.git",
+)
+
+git_override(
+    module_name = "qt-bazel",
+    commit = "886104974c2fd72439f2c33b5deebf0fe4649df7",
+    remote = "https://github.com/The-OpenROAD-Project/qt_bazel_prebuilts",
+)
+
+single_version_override(
+    module_name = "rules_pycross",
+    version = "0.8.3",
+)
+
+# Must match rules_hdl's own pip vendor hub python_version.
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(python_version = "3.13")
+use_repo(python, "python_3_13")
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "pip",
+    python_version = "3.13",
+    requirements_lock = "//:requirements_lock.txt",
+)
+use_repo(pip, "pip")

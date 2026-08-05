@@ -1,0 +1,14 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+id:
+  library: libdefault
+  name: manual_ip
+  vendor: vendor
+  version: '0.1'
+signals:
+  in:
+  - {name: a}
+  - {name: b}
+  out:
+  - {name: y}
