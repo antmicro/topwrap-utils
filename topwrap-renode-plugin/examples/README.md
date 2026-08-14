@@ -6,4 +6,6 @@ Examples demonstrating the plugin-specific syntax.
 
 - [generic-device](./generic-device/) A simplistic design demonstrating minimal plugin syntax.
 - [ic-network](./ic-network/) A more complex design showing how memory maps and IP-core properties are translated.
+- [repo-defs](./repo-defs/) An example showing a scenario where all settings are specified in the IP-core repository.
+- [resc-gen](./resc-gen/) An example showing how to customize the Renode script-output.
 

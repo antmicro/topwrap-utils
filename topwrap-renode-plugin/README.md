@@ -11,14 +11,14 @@ These platform files can be used to [test designs in Renode](https://renode.read
 This plugin is available as a python package and can be installed from this repo using for example `pip`:
 
 ```shell
-$ pip install "git+https://github.com/antmicro/topwrap-renode-plugin.git"
+$ pip install "git+https://github.com/antmicro/topwrap-utils.git#subdirectory=topwrap-renode-plugin"
 ```
 
 ## Usage
 
 As a Topwrap plugin, `renode_plugin` is automatically invoked when Topwrap builds a top-level module.
 Other than having the plugin installed in the same environment that you use Topwrap to build, you need to add metadata to your design YAML.
-To learn more about how this metadata is defined, please read the [documentation](https://antmicro.github.io/topwrap-renode-plugin/usage.html) and check out the [examples](./examples/) directory.
+To learn more about how this metadata is defined, please review the [documentation](./docs) and check out the [examples](./examples/) directory.
 
 ## Examples
 
