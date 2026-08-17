@@ -5,7 +5,7 @@ from pathlib import Path
 from jinja2 import Template
 from topwrap.model.design import Design
 from topwrap.model.module import Module
-from typing_extensions import Optional, cast
+from typing_extensions import Any, Optional, cast
 
 from renode_plugin.repl import RenodeMapping
 
@@ -35,11 +35,67 @@ class CPUInfo:
     elf: str  # path to elf
 
 
+def _parse_cpus(name: str, cpu_info: Any, renode_map: RenodeMapping) -> tuple[list[str], list[str]]:
+    cpu_names = []
+    elf_paths = []
+
+    if (
+        not isinstance(cpu_info, list)
+        and not all(isinstance(entry, list) for entry in cpu_info)
+        and not all(all(isinstance(item, str) for item in entry) for entry in cpu_info)
+    ):
+        raise TypeError(f"extension field {name}.cpus is not a list of cpu-elf pairs")
+
+    if not all(len(entry) == 2 for entry in cpu_info):
+        raise ValueError(f"extension field {name}.cpus[*] can only contain two items")
+
+    for entry in cast(list[list[str]], cpu_info):
+        cpu_name, elf_path = entry
+
+        if cpu_name not in renode_map:
+            raise ValueError(f"{cpu_name} does not have a Renode peripheral map")
+
+        cpu_names.append(cpu_name)
+        elf_paths.append(elf_path)
+
+    return cpu_names, elf_paths
+
+
+def _parse_analyze(name: str, analyzers_list: Any, renode_map: RenodeMapping) -> list[str]:
+    if not isinstance(analyzers_list, list) and not all(isinstance(a, str) for a in analyzers_list):
+        raise TypeError(f"extension field {name}.analyze is not a list of strings")
+
+    analyzers = cast(list[str], analyzers_list)
+
+    for analyzer in analyzers:
+        if analyzer not in renode_map:
+            raise ValueError(f"{analyzer} does not have a Renode peripheral map")
+
+    return analyzers
+
+
+def _parse_features(name: str, features: Any) -> set[str]:
+    if not isinstance(features, list) and not all(isinstance(f, str) for f in features):
+        raise TypeError(f"extension field {name}.features is not a list of strings")
+
+    for f in features:
+        if f not in FEATURES:
+            raise ValueError(f"Unknown feature {f}")
+
+    return set(cast(list[str], features))
+
+
+def _parse_repl(name: str, repl: Any) -> str:
+    if not isinstance(repl, str):
+        raise TypeError(f"extension field {name}.repl is not a string")
+    return repl
+
+
 class RESC_Simple:
     def __init__(
         self,
         design_name: str,
-        repl_path: str,
+        repl_path: Optional[str] = None,
         cpus: Optional[list[str]] = None,
         elfs: Optional[list[str]] = None,
         analyzers: Optional[list[str]] = None,
@@ -57,6 +113,12 @@ class RESC_Simple:
 
     def _is_valid(self) -> bool:
         return self._cpus is None or (self._elfs is not None and len(self._cpus) == len(self._elfs))
+
+    def has_repl(self) -> bool:
+        return self._repl_path is not None
+
+    def set_repl_path(self, path: str):
+        self._repl_path = path
 
     def render_template(self) -> str:
         keys = {
@@ -85,7 +147,7 @@ class RESC_Simple:
         return TEMPLATE.render(**keys)
 
     @staticmethod
-    def from_top_module(top_module: Module, repl_path: str, renode_map: RenodeMapping):
+    def from_top_module(top_module: Module, renode_map: RenodeMapping) -> "RESC_Simple":
         if top_module.design is None:
             raise ValueError(f"{top_module.id.combined()} is not a top level module")
         design = cast(Design, top_module.design)
@@ -94,7 +156,7 @@ class RESC_Simple:
         extension_data = design.extensions.find_by_name("renode_resc")
 
         if extension_data is None:
-            return RESC_Simple(design_name=name, repl_path=repl_path)
+            return RESC_Simple(design_name=name)
 
         data = extension_data.data
         if not isinstance(data, dict):
@@ -102,71 +164,23 @@ class RESC_Simple:
                 f"extension field {extension_data.name} in {top_module.id.combined()} is not a dict"
             )
 
-        collected_keys: set[str] = set()
-
+        repl_path = None
         cpu_names = []
         elf_paths = []
         analyzers = []
         feature_set = None
 
         if "cpus" in data:
-            collected_keys.add("cpus")
-
-            cpu_info = data["cpus"]
-
-            if (
-                not isinstance(cpu_info, list)
-                and not all(isinstance(entry, list) for entry in cpu_info)
-                and not all(all(isinstance(item, str) for item in entry) for entry in cpu_info)
-            ):
-                raise TypeError(
-                    f"extension field {extension_data.name}.cpus is not a list of cpu-elf pairs"
-                )
-
-            if not all(len(entry) == 2 for entry in cpu_info):
-                raise ValueError(
-                    f"extension field {extension_data.name}.cpus[*] can only contain two items"
-                )
-
-            for entry in cast(list[list[str]], cpu_info):
-                cpu_name, elf_path = entry
-
-                if cpu_name not in renode_map:
-                    raise ValueError(f"{cpu_name} does not have a Renode peripheral map")
-
-                cpu_names.append(cpu_name)
-                elf_paths.append(elf_path)
+            cpu_names, elf_paths = _parse_cpus(extension_data.name, data["cpus"], renode_map)
 
         if "analyze" in data:
-            collected_keys.add("analyze")
-
-            analyzers_list = data["analyze"]
-
-            if not isinstance(analyzers_list, list) and not all(
-                isinstance(a, str) for a in analyzers_list
-            ):
-                raise TypeError(
-                    f"extension field {extension_data.name}.analyze is not a list of strings"
-                )
-
-            analyzers = cast(list[str], analyzers_list)
+            analyzers = _parse_analyze(extension_data.name, data["analyze"], renode_map)
 
         if "features" in data:
-            features = data["features"]
-            if not isinstance(features, list) and not all(isinstance(f, str) for f in features):
-                raise TypeError(
-                    f"extension field {extension_data.name}.features is not a list of strings"
-                )
+            feature_set = _parse_features(extension_data.name, data["features"])
 
-            for f in features:
-                if f not in FEATURES:
-                    raise ValueError(f"Unknown feature {f}")
-
-            feature_set = set(cast(list[str], features))
-
-        for analyzer in analyzers:
-            if analyzer not in renode_map:
-                raise ValueError(f"{analyzer} does not have a Renode peripheral map")
+        if "repl" in data:
+            repl_path = _parse_repl(extension_data.name, data["repl"])
 
         return RESC_Simple(
             design_name=name,

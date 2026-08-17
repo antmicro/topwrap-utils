@@ -13,6 +13,7 @@ from renode_plugin.repl import (
     RenodePlatform,
     create_resolvers,
     create_resolvers_mod,
+    parse_external,
     parse_output_maps,
     render_hex,
     resolve_memorymap,
@@ -84,8 +85,13 @@ class RenodePeripheralGen(BasePlugin):
             src = platform.render_config(REPL_PREAMBLE, output.includes, output.device_filter)
             self.outputs[output.filename] = src
 
-        top_output = resolve_top_output(output_maps)
-        resc_gen = RESC_Simple.from_top_module(top_module, top_output.filename, renode_mapping)
+        resc_gen = RESC_Simple.from_top_module(top_module, renode_mapping)
+
+        if not resc_gen.has_repl():
+            external_input = parse_external(top_design)
+            top_output = resolve_top_output(output_maps, external_input)
+            resc_gen.set_repl_path(top_output.filename)
+
         self.outputs[str(Path(top_output.filename).with_suffix(".resc"))] = (
             resc_gen.render_template()
         )

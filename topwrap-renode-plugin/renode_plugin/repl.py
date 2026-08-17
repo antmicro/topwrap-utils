@@ -557,6 +557,29 @@ class DeviceFilter:
         return status is not None and status
 
 
+def parse_external(des: Design) -> list[str]:
+    metadata = des.extensions.find_by_name("renode_peripheral_gen")
+
+    if metadata is None:
+        return []
+
+    data = metadata.data
+
+    if "external" in data:
+        external = data["external"]
+        if not isinstance(external, list):
+            logging.error("renode_peripheral_gen.external has to be a list")
+            exit(1)
+
+        if not all(isinstance(file, str) for file in external):
+            logging.error("renode_peripheral_gen.external has to be a list of strings")
+            exit(1)
+
+        return cast(list[str], external)
+
+    return []
+
+
 @dataclass
 class OutputMap:
     filename: str
@@ -667,7 +690,7 @@ class RenodePlatform:
         return "\n\n".join(lines)
 
 
-def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
+def resolve_top_output(outputs: list[OutputMap], external: list[str]) -> OutputMap:
     if len(outputs) == 1:
         return outputs[0]
 
@@ -675,29 +698,50 @@ def resolve_top_output(outputs: list[OutputMap]) -> OutputMap:
     deps = {fn: set(o.includes) for fn, o in lookup.items()}
 
     remaining: set[str] = set(lookup.keys())
-    resolved: set[str] = set()
+    resolved: set[str] = set(external)
+
+    # Find any includes that are not defined in either `external` or `output` and warn about it
+    defined_outputs: set[str] = set(external) | set(lookup.keys())
+    assumed_resolved: set[str] = set()
+    for out, dep in deps.items():
+        if not dep <= defined_outputs:
+            missing_dependencies = dep - defined_outputs
+            logger.warning(
+                f"Missing dependencies for {out}: {', '.join(missing_dependencies)}. "
+                "To suppress this warning, please add external dependencies to `external`."
+            )
+            assumed_resolved |= missing_dependencies
+
+    # We've issued a warning, so let's assume they exist and continue
+    resolved |= assumed_resolved
 
     while True:
-        can_resolve: set[str] = set()
+        can_resolve: list[str] = []
 
         for output in remaining:
             if deps[output] <= resolved:
-                can_resolve.add(output)
+                can_resolve.append(output)
 
         if not can_resolve:
-            raise ValueError(
-                "it's impossible to resolve the top level REPL, since dependencies cannot be met"
+            guess = outputs[-1]  # A stable choice
+            logger.warning(
+                "Failed to infer the top level REPL. "
+                f"It's impossible to satisfy the dependencies of {', '.join(remaining)}. "
+                f"{guess.filename} is assumed to be the top-level REPL."
             )
+            return guess
 
         for output in can_resolve:
             remaining.remove(output)
             resolved.add(output)
 
         if not remaining and len(can_resolve) > 1:
-            raise ValueError(
-                "cannot determine the top output REPL, since multiple files can be "
-                "used indipendantly"
+            guess = sorted(can_resolve)[0]  # A stable choice
+            logger.warning(
+                "Cannot determine the top level REPL, since multiple files can be "
+                f"used indipendantly. {guess} is assumed to be the top-level REPL."
             )
+            return lookup[guess]
 
         if not remaining:
-            return lookup[can_resolve.pop()]
+            return lookup[can_resolve[0]]
