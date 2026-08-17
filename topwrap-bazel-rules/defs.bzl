@@ -107,6 +107,7 @@ def _topwrap_core_impl(ctx):
             data = [],
             deps = ctx.attr.deps,
             label = ctx.label,
+            plis = [],
             tags = [],
         )],
         old_infos = [dep[VerilogInfo] for dep in ctx.attr.deps],
@@ -239,6 +240,7 @@ def _topwrap_design_impl(ctx):
         data = [],
         deps = [],
         label = ctx.label,
+        plis = [],
         tags = [],
     )
     verilog_info = VerilogInfo(dag = depset(
