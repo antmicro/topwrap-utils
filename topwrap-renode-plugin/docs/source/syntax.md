@@ -42,7 +42,10 @@ extensions:                              # The "extensions" tag
       - filename: "..."                  #  Output file name
         filter: []                       #  IP-cores to include
         includes: []                     #  List of other .repl files to include
+    external: []                         # List of filepaths (relative to the output) of externally
+                                         #  defined REPL-files
   renode_resc:                           # Settings related to RESC file generation (optional)
+      repl: "..."                        # The `filename` of the platform to use
       cpus:                              # List of IP-cores to mark as CPU's, with relative path
                                          # to ELF-files.
         - ["cpu_core", "./path/to/elf"]
@@ -71,6 +74,7 @@ The value of `<symbol>` chooses the name of the input port from which the plugin
 
 In contrast, the `memory_map` *source* can be used to reference either the `size` or the `address` of a memory map.
 If the IP-core is not directly connected to the interconnect where this memory map is defined (for example if the IP core is connected via a bridge), the plugin will figure out which memory map encompasses the target IP core.
+
 
 ## Output
 
@@ -112,6 +116,12 @@ output:
     includes: ["A_and_B.repl"]    # Include previous file 
 ```
 
+## External
+
+The `external` setting allows you to explicitly state any externally-defined REPL-files as a list of strings.
+You can then reference these files as `includes` to any generated REPLs.
+While not strictly necessary, it will prevent warnings from being generated during the build.
+
 ## Renode RESC generation
 
 RESC files are always generated next to the REPL-file.
@@ -133,4 +143,10 @@ The supported feature tags are:
 | `no_run`      | The RESC file will not instruct Renode to run a simulation. This is useful if an external tool invokes `run` |
 | `reset_macro` | The RESC file will contain a macro, `$reset`, which will instruct Renode reset the CPU and upload the ELF-file binaries. |
 | `mem_mailbox` | This will add an watcher listening on address `0x80f80000`, which will log any values written to that address. |
+
+The platform that's used is defined by the REPL-files.
+If you've chosen to generate several outputs, then the plugin will infer which of the output files transitively imports all peripherals.
+If this can't be inferred, the output defined last is used.
+Optionally, the `repl`-key can be used to force a certain file to be used as the platform description.
+This file can be externally defined.
 
