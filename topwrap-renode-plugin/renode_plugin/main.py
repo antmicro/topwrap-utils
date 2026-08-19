@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 
 from topwrap.model.design import Design
-from topwrap.plugin.base import BasePlugin, BuildContext
+from topwrap.plugin.base import BasePlugin, BuildContext, OutputDir
 from typing_extensions import cast
 
 from renode_plugin.repl import (
@@ -96,9 +96,9 @@ class RenodePeripheralGen(BasePlugin):
             resc_gen.render_template()
         )
 
-    def pre_output_writing(self, ctx: BuildContext, target_dir: Path):
+    def pre_output_writing(self, ctx: BuildContext, target_dir: OutputDir):
         for filename, src in self.outputs.items():
-            out_path = target_dir / filename
+            out_path = target_dir.target_dir / filename
             if out_path.exists() and out_path.is_dir():
                 logger.error("cannot write to a directory")
                 exit(1)

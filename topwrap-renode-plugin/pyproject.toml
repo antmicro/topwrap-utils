@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "30c7ebfc4a3870bbb19fd13228eebe4adad70c4f" }
+topwrap = { git = "https://github.com/antmicro/topwrap.git" , rev = "ccebedba9102446ac741ab7b96af0d4edf57dc7f" }
 
 [project.entry-points."topwrap.plugins"]
 renode_plugin = "renode_plugin.main:RenodePeripheralGen"

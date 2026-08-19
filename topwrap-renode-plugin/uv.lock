@@ -1213,7 +1213,7 @@ wheels = [
 [[package]]
 name = "pipeline-manager"
 version = "0.0.5"
-source = { git = "https://github.com/antmicro/kenning-pipeline-manager?rev=b33a13e801e59b8dadec9dde4a247e7fa6e68d99#b33a13e801e59b8dadec9dde4a247e7fa6e68d99" }
+source = { git = "https://github.com/antmicro/kenning-pipeline-manager?rev=b111730a4a8c45c5bca68cda7e73607302a48615#b111730a4a8c45c5bca68cda7e73607302a48615" }
 dependencies = [
     { name = "attrs" },
     { name = "beautifulsoup4" },
@@ -1741,7 +1741,7 @@ requires-dist = [
     { name = "codespell", marker = "extra == 'lint'", specifier = "==2.3.0" },
     { name = "jinja2", specifier = ">=3.1.2" },
     { name = "ruff", marker = "extra == 'lint'", specifier = "==0.12.1" },
-    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=30c7ebfc4a3870bbb19fd13228eebe4adad70c4f" },
+    { name = "topwrap", git = "https://github.com/antmicro/topwrap.git?rev=ccebedba9102446ac741ab7b96af0d4edf57dc7f" },
 ]
 provides-extras = ["lint"]
 
@@ -2179,13 +2179,14 @@ wheels = [
 [[package]]
 name = "topwrap"
 version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap.git?rev=30c7ebfc4a3870bbb19fd13228eebe4adad70c4f#30c7ebfc4a3870bbb19fd13228eebe4adad70c4f" }
+source = { git = "https://github.com/antmicro/topwrap.git?rev=ccebedba9102446ac741ab7b96af0d4edf57dc7f#ccebedba9102446ac741ab7b96af0d4edf57dc7f" }
 dependencies = [
     { name = "amaranth" },
     { name = "amaranth-soc" },
     { name = "amaranth-yosys" },
     { name = "axi-interconnect-generator-plugin" },
     { name = "cyclopts" },
+    { name = "lxml" },
     { name = "marshmallow" },
     { name = "marshmallow-dataclass" },
     { name = "pipeline-manager" },
@@ -2201,7 +2202,7 @@ dependencies = [
 [[package]]
 name = "topwrap-ipxact-parser"
 version = "0.0.1"
-source = { git = "https://github.com/antmicro/topwrap-utils?subdirectory=topwrap-ipxact-parser&rev=949dd6b39c188a5063e05d90de74ef8a2666c369#949dd6b39c188a5063e05d90de74ef8a2666c369" }
+source = { git = "https://github.com/antmicro/topwrap-utils?subdirectory=topwrap-ipxact-parser&rev=2a8c52443ab416155342f7cadeb06746f4f75e59#2a8c52443ab416155342f7cadeb06746f4f75e59" }
 dependencies = [
     { name = "lxml" },
     { name = "six" },
