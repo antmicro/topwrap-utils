@@ -50,8 +50,8 @@ bazel_rules_example:
     - curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64
     - chmod +x /usr/local/bin/bazel
   script:
-    - cd topwrap-bazel-rules
-    - bazel build //example:my_design
+    - cd topwrap-bazel-rules/example
+    - bazel build //:my_design
 
 # Renode plugin
 renode_plugin_lint:

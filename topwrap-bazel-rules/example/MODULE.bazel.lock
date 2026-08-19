@@ -717,6 +717,8 @@
     "https://bcr.bazel.build/modules/tcl_lang/9.0.2.bcr.1/source.json": "fac478c17b901d1b168339ed49881e5883fac98bb9397586300d3ca2ed5cefa8",
     "https://bcr.bazel.build/modules/tcmalloc/0.0.0-20250927-12f2552/MODULE.bazel": "b702a6b6806b1041d84918c5098b765b204261647f8cb3e75e0f439106b65ddd",
     "https://bcr.bazel.build/modules/tcmalloc/0.0.0-20250927-12f2552/source.json": "a6f5da61dd65e3f2f7380b4f52dd4b0f771a5b6ba9db7b46be7c28c52bc7af58",
+    "https://bcr.bazel.build/modules/toolchains_llvm/1.4.0/MODULE.bazel": "05239402b7374293359c2f22806f420b75aa5d6f4b15a2eaa809a2c214d58b31",
+    "https://bcr.bazel.build/modules/toolchains_llvm/1.4.0/source.json": "229a516d282b17a82be54c6e3ae220a1b750fb55a8495567e5c7a9d09423f3e2",
     "https://bcr.bazel.build/modules/upb/0.0.0-20211020-160625a/MODULE.bazel": "6cced416be2dc5b9c05efd5b997049ba795e5e4e6fafbe1624f4587767638928",
     "https://bcr.bazel.build/modules/upb/0.0.0-20220923-a547704/MODULE.bazel": "7298990c00040a0e2f121f6c32544bab27d4452f80d9ce51349b1a28f3005c43",
     "https://bcr.bazel.build/modules/upb/0.0.0-20230516-61a97ef/MODULE.bazel": "c0df5e35ad55e264160417fd0875932ee3c9dda63d9fccace35ac62f45e1b6f9",
@@ -918,249 +920,6 @@
         "recordedRepoMappingEntries": []
       }
     },
-    "@@rules_hdl+//dependency_support:pdks_extension.bzl%pdks_extension": {
-      "general": {
-        "bzlTransitiveDigest": "vdhT5DhEVCWOeBZYlbsu4jWwdf84ifwyhThHxWM2tas=",
-        "usagesDigest": "8ZhcQIKtlJkPgYYAWu0WvuPm9Xz6XCj93Fwurf21Sfw=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "org_theopenroadproject_asap7_pdk_r1p7": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/The-OpenROAD-Project/asap7_pdk_r1p7/archive/1ff7649bbf423207f6f70293dc1cf630cd477365.tar.gz"
-              ],
-              "build_file": "@@rules_hdl+//dependency_support/org_theopenroadproject_asap7_pdk_r1p7:bundled.BUILD.bazel",
-              "strip_prefix": "asap7_pdk_r1p7-1ff7649bbf423207f6f70293dc1cf630cd477365",
-              "sha256": "b5847f93e55debb49d03ec581e22eb301109ff90c9ad19d35ae1223c70250391"
-            }
-          },
-          "org_theopenroadproject_asap7sc6t_26": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/The-OpenROAD-Project/asap7sc6t_26/archive/f572bf760c8bdc853cbafd0742790aba0780089c.tar.gz"
-              ],
-              "build_file": "@@rules_hdl+//dependency_support/org_theopenroadproject_asap7sc6t_26:bundled.BUILD.bazel",
-              "strip_prefix": "asap7sc6t_26-f572bf760c8bdc853cbafd0742790aba0780089c",
-              "sha256": "4bfe15775eaab3a5cc443d444ef82bf7b9c818ba2ed948ce3d9cc6a4cfa1c36c"
-            }
-          },
-          "org_theopenroadproject_asap7sc7p5t_27": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/The-OpenROAD-Project/asap7sc7p5t_27/archive/900f55ed8bef025f39edcc8b8be5e04a2c55c15a.tar.gz"
-              ],
-              "build_file": "@@rules_hdl+//dependency_support/org_theopenroadproject_asap7sc7p5t_27:bundled.BUILD.bazel",
-              "strip_prefix": "asap7sc7p5t_27-900f55ed8bef025f39edcc8b8be5e04a2c55c15a",
-              "sha256": "db5531736a34f34e919488468e8ee09ae87495ff8a6188fad375d68c19e10e20"
-            }
-          },
-          "org_theopenroadproject_asap7sc7p5t_28": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/The-OpenROAD-Project/asap7sc7p5t_28/archive/d88477438935a5a388bd6294f682dc405c93c5d2.tar.gz"
-              ],
-              "build_file": "@@rules_hdl+//dependency_support/org_theopenroadproject_asap7sc7p5t_28:bundled.BUILD.bazel",
-              "strip_prefix": "asap7sc7p5t_28-d88477438935a5a388bd6294f682dc405c93c5d2",
-              "sha256": "7f028a41425b8d736958cae994b3c1722d4bef2c0d28f6bf507b9ac8138ecc41"
-            }
-          },
-          "com_google_skywater_pdk": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/google/skywater-pdk/archive/3d7617a1acb92ea883539bcf22a632d6361a5de4.tar.gz"
-              ],
-              "strip_prefix": "skywater-pdk-3d7617a1acb92ea883539bcf22a632d6361a5de4",
-              "sha256": "49e5b03c26131a03eb038697d396a6ebf14058d78196f5d95c2bbdb0bdc8f32e",
-              "build_file": "@@rules_hdl+//dependency_support/com_google_skywater_pdk:bundled.BUILD.bazel"
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_hd": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "ac7fb61f06e6470b94e8afdf7c25268f62fbd7b1",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git",
-              "shallow_since": "1605028103 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_hd\")\n",
-              "patches": [
-                "@@rules_hdl+//dependency_support/com_google_skywater_pdk/sky130_fd_sc_hd:pdk.patch"
-              ],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_hdll": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "0694bd23893de20f5233ef024acf6cca1e750ac6",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hdll.git",
-              "shallow_since": "1604475910 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_hdll\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_hs": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "1d051f49bfe4e2fe9108d702a8bc2e9c081005a4",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hs.git",
-              "shallow_since": "1605574092 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_hs\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_hvl": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "4fd4f858d16c558a6a488b200649e909bb4dd800",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hvl.git",
-              "shallow_since": "1604476031 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_hvl\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_lp": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "e2c1e0646999163d35ea7b2521c3ec5c28633e63",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_lp.git",
-              "shallow_since": "1604476084 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_lp\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_ls": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "4f549e30dd91a1c264f8895e07b2872fe410a8c2",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_ls.git",
-              "shallow_since": "1604476021 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_ls\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          },
-          "com_google_skywater_pdk_sky130_fd_sc_ms": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-            "attributes": {
-              "commit": "ae1b7f68821505cf2d93d9d44cce5ece22710fad",
-              "remote": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_ms.git",
-              "shallow_since": "1605631186 -0800",
-              "build_file_content": "\nload(\"@rules_hdl//dependency_support/com_google_skywater_pdk:declare_cell_library.bzl\", \"declare_cell_library\")\ndeclare_cell_library(\"sky130_fd_sc_ms\")\n",
-              "patches": [],
-              "patch_args": [
-                "-p1"
-              ]
-            }
-          }
-        },
-        "moduleExtensionMetadata": {
-          "explicitRootModuleDirectDeps": [
-            "org_theopenroadproject_asap7_pdk_r1p7",
-            "org_theopenroadproject_asap7sc6t_26",
-            "org_theopenroadproject_asap7sc7p5t_27",
-            "org_theopenroadproject_asap7sc7p5t_28",
-            "com_google_skywater_pdk",
-            "com_google_skywater_pdk_sky130_fd_sc_hd",
-            "com_google_skywater_pdk_sky130_fd_sc_hdll",
-            "com_google_skywater_pdk_sky130_fd_sc_hs",
-            "com_google_skywater_pdk_sky130_fd_sc_hvl",
-            "com_google_skywater_pdk_sky130_fd_sc_lp",
-            "com_google_skywater_pdk_sky130_fd_sc_ls",
-            "com_google_skywater_pdk_sky130_fd_sc_ms"
-          ],
-          "explicitRootModuleDirectDevDeps": [],
-          "useAllRepos": "NO",
-          "reproducible": false
-        },
-        "recordedRepoMappingEntries": [
-          [
-            "rules_hdl+",
-            "bazel_tools",
-            "bazel_tools"
-          ],
-          [
-            "rules_hdl+",
-            "rules_hdl",
-            "rules_hdl+"
-          ]
-        ]
-      }
-    },
-    "@@rules_hdl+//dependency_support:tools_extension.bzl%tools_extension": {
-      "general": {
-        "bzlTransitiveDigest": "LZWokbpDkxrocoMlTLE8E8pF+s4GFcyeF7CemnByjkE=",
-        "usagesDigest": "QtAlHyMAi8p6WawgGkkA1u0r8WlgGmap5lO1WXFnjak=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "at_clifford_yosys": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/YosysHQ/yosys/archive/8f07a0d8404f63349d8d3111217b73c9eafbd667.zip"
-              ],
-              "sha256": "46a9a4d969770fa20a2fd12c8e83307a597126609645c9655c370c0c365da344",
-              "strip_prefix": "yosys-8f07a0d8404f63349d8d3111217b73c9eafbd667",
-              "build_file": "@@rules_hdl+//dependency_support/at_clifford_yosys:bundled.BUILD.bazel",
-              "patches": [
-                "@@rules_hdl+//dependency_support/at_clifford_yosys:yosys.patch",
-                "@@rules_hdl+//dependency_support/at_clifford_yosys:autoname.patch"
-              ]
-            }
-          },
-          "com_icarus_iverilog": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "urls": [
-                "https://github.com/steveicarus/iverilog/archive/v12_0.tar.gz"
-              ],
-              "strip_prefix": "iverilog-12_0",
-              "sha256": "a68cb1ef7c017ef090ebedb2bc3e39ef90ecc70a3400afb4aa94303bc3beaa7d",
-              "build_file": "@@rules_hdl+//dependency_support/com_icarus_iverilog:bundled.BUILD.bazel"
-            }
-          }
-        },
-        "moduleExtensionMetadata": {
-          "explicitRootModuleDirectDeps": [
-            "at_clifford_yosys",
-            "com_icarus_iverilog"
-          ],
-          "explicitRootModuleDirectDevDeps": [],
-          "useAllRepos": "NO",
-          "reproducible": false
-        },
-        "recordedRepoMappingEntries": [
-          [
-            "rules_hdl+",
-            "bazel_tools",
-            "bazel_tools"
-          ]
-        ]
-      }
-    },
     "@@rules_kotlin+//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
         "bzlTransitiveDigest": "03Qju4tW0vE+0RBuZGuV2A4Hx6AiSkdNahYvworx2aM=",
@@ -1350,6 +1109,85 @@
           }
         },
         "recordedRepoMappingEntries": []
+      }
+    },
+    "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
+      "general": {
+        "bzlTransitiveDigest": "2nizkGuHTT5Rnm/m2ZKyN0gz6PG1uMRn/wIec1UMxaw=",
+        "usagesDigest": "sjZitmmu3o/7HT3S5bEN9MppqSOJ+pZh3LxtOcUSMAI=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "llvm_toolchain_llvm": {
+            "repoRuleId": "@@toolchains_llvm+//toolchain:rules.bzl%llvm",
+            "attributes": {
+              "alternative_llvm_sources": [],
+              "auth_patterns": {},
+              "distribution": "auto",
+              "exec_arch": "",
+              "exec_os": "",
+              "libclang_rt": {},
+              "llvm_mirror": "",
+              "llvm_version": "19.1.7",
+              "llvm_versions": {},
+              "netrc": "",
+              "sha256": {},
+              "strip_prefix": {},
+              "urls": {}
+            }
+          },
+          "llvm_toolchain": {
+            "repoRuleId": "@@toolchains_llvm+//toolchain:rules.bzl%toolchain",
+            "attributes": {
+              "absolute_paths": false,
+              "archive_flags": {},
+              "compile_flags": {},
+              "conly_flags": {},
+              "coverage_compile_flags": {},
+              "coverage_link_flags": {},
+              "cxx_builtin_include_directories": {},
+              "cxx_flags": {},
+              "cxx_standard": {
+                "": "c++20"
+              },
+              "dbg_compile_flags": {},
+              "exec_arch": "",
+              "exec_os": "",
+              "extra_exec_compatible_with": {},
+              "extra_target_compatible_with": {},
+              "link_flags": {},
+              "link_libs": {},
+              "llvm_versions": {
+                "": "19.1.7"
+              },
+              "opt_compile_flags": {},
+              "opt_link_flags": {},
+              "stdlib": {},
+              "target_settings": {},
+              "unfiltered_compile_flags": {},
+              "toolchain_roots": {},
+              "sysroot": {}
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "toolchains_llvm+",
+            "bazel_skylib",
+            "bazel_skylib+"
+          ],
+          [
+            "toolchains_llvm+",
+            "bazel_tools",
+            "bazel_tools"
+          ],
+          [
+            "toolchains_llvm+",
+            "toolchains_llvm",
+            "toolchains_llvm+"
+          ]
+        ]
       }
     }
   },

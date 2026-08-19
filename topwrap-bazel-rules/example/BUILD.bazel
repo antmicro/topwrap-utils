@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 load("@rules_hdl//verilog:defs.bzl", "verilog_library")
-load("//:defs.bzl", "topwrap_design", "topwrap_design_gui", "topwrap_library", "topwrap_parse_sources")
+load("@rules_topwrap//:defs.bzl", "topwrap_design", "topwrap_design_gui", "topwrap_library", "topwrap_parse_sources")
 
 # 1. Parse an existing IP verilog_library into topwrap core descriptions.
 topwrap_parse_sources(
     name = "my_parsed_ip",
-    deps = ["//example/parsed_ip:parsed_ip_lib"],
+    deps = ["//parsed_ip:parsed_ip_lib"],
 )
 
 # 2. Assemble a library from a manualy written and a parsed core
@@ -15,7 +15,7 @@ topwrap_library(
     name = "my_library",
     cores = [
         ":my_parsed_ip",
-        "//example/manual_ip:manual_ip",
+        "//manual_ip:manual_ip",
     ],
 )
 

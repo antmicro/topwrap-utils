@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 load("@rules_hdl//verilog:defs.bzl", "verilog_library")
-load("//:defs.bzl", "topwrap_core")
+load("@rules_topwrap//:defs.bzl", "topwrap_core")
 
 verilog_library(
     name = "manual_ip_lib",

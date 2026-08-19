@@ -1,9 +1,15 @@
 # Copyright (c) 2026 Antmicro <www.antmicro.com>
 # SPDX-License-Identifier: Apache-2.0
 
-module(
-    name = "rules_topwrap",
-    version = "0.0.1",
+# Standalone Bazel module consuming topwrap-bazel-rules as an external dependency
+
+module(name = "topwrap_bazel_rules_example")
+
+bazel_dep(name = "rules_topwrap")
+
+local_path_override(
+    module_name = "rules_topwrap",
+    path = "..",
 )
 
 bazel_dep(name = "rules_python", version = "0.40.0")
@@ -25,13 +31,21 @@ single_version_override(
     version = "0.2.11",
 )
 
-single_version_override(
-    module_name = "rules_pycross",
-    version = "0.8.3",
-)
+# OpenROAD needs C++20; system gcc defaults to c++17.
+bazel_dep(name = "toolchains_llvm", version = "1.4.0")
 
-# rules_hdl uses bazel_deps on these without a registry version, so they must 
-# be resolved via override even though this module doesn't build their targets.
+llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
+llvm.toolchain(
+    cxx_standard = {"": "c++20"},
+    llvm_version = "19.1.7",
+)
+use_repo(llvm, "llvm_toolchain")
+
+register_toolchains("@llvm_toolchain//:all")
+
+bazel_dep(name = "openroad", repo_name = "org_theopenroadproject")
+bazel_dep(name = "rules_7zip", version = "0.0.1")
+
 git_override(
     module_name = "rules_7zip",
     commit = "03a10b5796eac0aed122cf52064ed15785610857",
@@ -53,15 +67,11 @@ git_override(
     remote = "https://github.com/The-OpenROAD-Project/qt_bazel_prebuilts",
 )
 
-# Must match rules_hdl's own pip vendor hub python_version.
+single_version_override(
+    module_name = "rules_pycross",
+    version = "0.8.3",
+)
+
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(python_version = "3.13")
 use_repo(python, "python_3_13")
-
-pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-pip.parse(
-    hub_name = "pip",
-    python_version = "3.13",
-    requirements_lock = "//:requirements_lock.txt",
-)
-use_repo(pip, "pip")
