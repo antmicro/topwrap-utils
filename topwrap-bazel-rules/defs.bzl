@@ -23,6 +23,7 @@ def _topwrap_parse_sources_impl(ctx):
     args.add("--repo", out.path)
     args.add("repo")
     args.add("parse")
+    args.add("--exists-strategy", ctx.attr.exists_strategy)
     args.add(ctx.attr.name)
     args.add_all(include_dirs, before_each = "--include")
     args.add_all(src_files)
@@ -51,6 +52,11 @@ topwrap_parse_sources = rule(
         "deps": attr.label_list(
             doc = "verilog_library targets to parse.",
             providers = [VerilogInfo],
+        ),
+        "exists_strategy": attr.string(
+            doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
+            default = "skip",
+            values = ["raise", "skip", "overwrite"],
         ),
         "_topwrap": attr.label(
             default = Label(_TOPWRAP),
