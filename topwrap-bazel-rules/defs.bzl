@@ -257,6 +257,11 @@ def _gui_launcher_runfiles(ctx, extra_files = []):
     runfiles = runfiles.merge(ctx.attr._topwrap[DefaultInfo].default_runfiles)
     return runfiles.merge(ctx.attr._bash_runfiles[DefaultInfo].default_runfiles)
 
+def _rlocation_path(ctx, file):
+    if file.short_path.startswith("../"):
+        return file.short_path[len("../"):]
+    return "%s/%s" % (ctx.workspace_name, file.short_path)
+
 def _gui_launcher_header(ctx):
     # Bazel Bash runfiles library init, v3. Verbatim copy of the boilerplate
     # documented at:
@@ -273,7 +278,7 @@ f=
 """
     return (
         "#!/usr/bin/env bash\nset -euo pipefail\n" + runfiles_bash_init +
-        '\nTOPWRAP="$(rlocation %s/%s)"\n' % (ctx.workspace_name, ctx.executable._topwrap.short_path)
+        '\nTOPWRAP="$(rlocation %s)"\n' % _rlocation_path(ctx, ctx.executable._topwrap)
     )
 
 _GUI_LAUNCHER_ATTRS = {
@@ -299,10 +304,10 @@ def _topwrap_design_gui_impl(ctx):
     library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.deps]
 
     repo_flags = "".join([
-        '--repo "$(rlocation %s/%s)" ' % (ctx.workspace_name, d.short_path)
+        '--repo "$(rlocation %s)" ' % _rlocation_path(ctx, d)
         for d in library_dirs
     ])
-    design_rloc = "%s/%s" % (ctx.workspace_name, ctx.file.design.short_path)
+    design_rloc = _rlocation_path(ctx, ctx.file.design)
 
     content = _gui_launcher_header(ctx) + 'exec "$TOPWRAP" %sgui --preserve-parent-state --design "$(rlocation %s)" "$@"\n' % (repo_flags, design_rloc)
     ctx.actions.write(output = launcher, content = content, is_executable = True)
