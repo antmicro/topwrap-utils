@@ -20,6 +20,7 @@ axi_interconnect_generator_plugin = [
   "**/*.sv",
   "**/*.v",
   "**/*.svh",
+  "**/Bender.yml",
   "**/scripts/*.py"
 ]
 
