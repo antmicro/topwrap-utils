@@ -16,12 +16,15 @@ def _topwrap_parse_sources_impl(ctx):
 
     src_files = depset([f for entry in dag_entries for f in entry.srcs])
     all_files = depset([f for entry in dag_entries for f in entry.srcs + entry.hdrs + entry.data])
+    hdr_files = depset([f for entry in dag_entries for f in entry.hdrs])
+    include_dirs = depset([f.dirname for f in hdr_files.to_list()])
 
     args = ctx.actions.args()
     args.add("--repo", out.path)
     args.add("repo")
     args.add("parse")
     args.add(ctx.attr.name)
+    args.add_all(include_dirs, before_each = "--include")
     args.add_all(src_files)
 
     ctx.actions.run(
