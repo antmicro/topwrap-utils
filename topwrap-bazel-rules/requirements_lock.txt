@@ -544,9 +544,9 @@ json-rpc==1.15.0 \
     # via
     #   pipeline-manager
     #   pipeline-manager-backend-communication
-# WARNING: pip install will require the following package to be hashed.
-# Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
-jsonschema @ git+https://github.com/python-jsonschema/jsonschema@eb8255a473b4f6e9439322f9ec93e345bc7f17d6
+jsonschema==4.26.0 \
+    --hash=sha256:0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326 \
+    --hash=sha256:d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce
     # via pipeline-manager
 jsonschema-specifications==2023.7.1 \
     --hash=sha256:05adf340b659828a004220a9613be00fa3f223f2b82002e273dee62fd50524b1 \
@@ -1001,9 +1001,8 @@ packaging==26.2 \
     --hash=sha256:5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e \
     --hash=sha256:ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661
     # via marshmallow
-# WARNING: pip install will require the following package to be hashed.
-# Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
-pipeline-manager @ git+https://github.com/antmicro/kenning-pipeline-manager@b111730a4a8c45c5bca68cda7e73607302a48615
+pipeline-manager @ https://github.com/antmicro/kenning-pipeline-manager/releases/download/v0.5.0/pipeline_manager-0.5.0-py3-none-any.whl \
+    --hash=sha256:24dd46598bd3858166170452d7ef46bed985e13ada6c08505867b7b3cd2798aa
     # via topwrap
 # WARNING: pip install will require the following package to be hashed.
 # Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
@@ -1603,7 +1602,7 @@ starlette==0.41.3 \
     # via fastapi
 # WARNING: pip install will require the following package to be hashed.
 # Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
-topwrap @ git+https://github.com/antmicro/topwrap.git@3a29941ac9a803c070868164bc0431ab8946febe
+topwrap @ git+https://github.com/antmicro/topwrap.git@5e0f809b45c461722414586163a7d448819a6ccb
     # via -r requirements.in
 # WARNING: pip install will require the following package to be hashed.
 # Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
