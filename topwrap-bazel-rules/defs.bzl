@@ -294,7 +294,7 @@ _GUI_LAUNCHER_ATTRS = {
 
 def _topwrap_gui_impl(ctx):
     launcher = ctx.actions.declare_file(ctx.label.name)
-    content = _gui_launcher_header(ctx) + 'exec "$TOPWRAP" gui --preserve-parent-state "$@"\n'
+    content = _gui_launcher_header(ctx) + 'exec "$TOPWRAP" gui --preserve-parent-state --follow-symlink "$@"\n'
     ctx.actions.write(output = launcher, content = content, is_executable = True)
     return [DefaultInfo(executable = launcher, runfiles = _gui_launcher_runfiles(ctx))]
 
@@ -315,7 +315,7 @@ def _topwrap_design_gui_impl(ctx):
     ])
     design_rloc = _rlocation_path(ctx, ctx.file.design)
 
-    content = _gui_launcher_header(ctx) + 'exec "$TOPWRAP" %sgui --preserve-parent-state --design "$(rlocation %s)" "$@"\n' % (repo_flags, design_rloc)
+    content = _gui_launcher_header(ctx) + 'exec "$TOPWRAP" %sgui --preserve-parent-state --follow-symlink --design "$(rlocation %s)" "$@"\n' % (repo_flags, design_rloc)
     ctx.actions.write(output = launcher, content = content, is_executable = True)
 
     runfiles = _gui_launcher_runfiles(ctx, extra_files = [ctx.file.design] + library_dirs)
