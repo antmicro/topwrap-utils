@@ -19,7 +19,10 @@ def _topwrap_parse_sources_impl(ctx):
     hdr_files = depset([f for entry in dag_entries for f in entry.hdrs])
     include_dirs = depset([f.dirname for f in hdr_files.to_list()])
 
+    library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.libraries]
+
     args = ctx.actions.args()
+    args.add_all(library_dirs, before_each = "--repo", expand_directories = False)
     args.add("--repo", out.path)
     args.add("repo")
     args.add("parse")
@@ -35,7 +38,7 @@ def _topwrap_parse_sources_impl(ctx):
     ctx.actions.run(
         executable = ctx.executable._topwrap,
         arguments = [args],
-        inputs = all_files,
+        inputs = depset(library_dirs, transitive = [all_files]),
         outputs = [out],
         mnemonic = "TopwrapParse",
         progress_message = "Parsing IP cores into topwrap library %s" % ctx.attr.name,
@@ -56,6 +59,10 @@ topwrap_parse_sources = rule(
         "deps": attr.label_list(
             doc = "verilog_library targets to parse.",
             providers = [VerilogInfo],
+        ),
+        "libraries": attr.label_list(
+            doc = "topwrap_library targets whose interfaces are made available as inference candidates. Not copied into the output.",
+            providers = [TopwrapLibraryInfo],
         ),
         "exists_strategy": attr.string(
             doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
