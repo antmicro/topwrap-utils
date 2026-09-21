@@ -24,6 +24,10 @@ def _topwrap_parse_sources_impl(ctx):
     args.add("repo")
     args.add("parse")
     args.add("--exists-strategy", ctx.attr.exists_strategy)
+    if ctx.attr.inference:
+        args.add("--inference")
+        args.add_all(ctx.attr.inference_interfaces, before_each = "--inference-interface")
+        args.add_all(["{}={}".format(",".join(v), k) for k, v in ctx.attr.inference_groups.items()], before_each = "--grouping-hint")
     args.add(ctx.attr.name)
     args.add_all(include_dirs, before_each = "--include")
     args.add_all(src_files)
@@ -57,6 +61,16 @@ topwrap_parse_sources = rule(
             doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
             default = "skip",
             values = ["raise", "skip", "overwrite"],
+        ),
+        "inference": attr.bool(
+            doc = "Enable interface inference.",
+            default = True,
+        ),
+        "inference_interfaces": attr.string_list(
+            doc = "Set of interface definitions to consider during inference (empty means all available definitions are considered).",
+        ),
+        "inference_groups": attr.string_list_dict(
+            doc = "Dictionary specifying how prefixes should be merged into groups.",
         ),
         "_topwrap": attr.label(
             default = Label(_TOPWRAP),
