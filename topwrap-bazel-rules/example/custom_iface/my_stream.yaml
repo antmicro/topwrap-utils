@@ -1,0 +1,11 @@
+id:
+  library: example
+  name: my_stream
+  vendor: antmicro
+signals:
+  required:
+    in:
+      READY: ready
+    out:
+      DATA: data
+      VALID: valid

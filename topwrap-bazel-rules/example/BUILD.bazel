@@ -19,6 +19,24 @@ topwrap_library(
     ],
 )
 
+# 2b. Infer interfaces on a core using a user-provided interface definition.
+topwrap_library(
+    name = "my_interfaces",
+    interfaces = ["//custom_iface:my_stream.yaml"],
+)
+
+topwrap_parse_sources(
+    name = "my_stream_ip",
+    libraries = [":my_interfaces"],
+    deps = ["//custom_iface:stream_ip_lib"],
+)
+
+topwrap_library(
+    name = "my_stream_library",
+    cores = [":my_stream_ip"],
+    interfaces = ["//custom_iface:my_stream.yaml"],
+)
+
 # 3. Generate the top-level wrapper
 topwrap_design(
     name = "my_design",

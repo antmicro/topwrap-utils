@@ -1,0 +1,11 @@
+# Copyright (c) 2026 Antmicro <www.antmicro.com>
+# SPDX-License-Identifier: Apache-2.0
+
+load("@rules_hdl//verilog:defs.bzl", "verilog_library")
+
+verilog_library(
+    name = "stream_ip_lib",
+    srcs = ["stream_ip.v"],
+    visibility = ["//visibility:public"],
+)
+exports_files(["my_stream.yaml"])
