@@ -37,10 +37,21 @@ def main() -> int:
     interfaces_dir = out_dir / "interfaces"
     mappings_dir = out_dir / "mappings"
 
+    resource_dirs = {
+        "cores": cores_dir,
+        "interfaces": interfaces_dir,
+        "mappings": mappings_dir,
+    }
+
+    # Merge provider directories first, in command-line order. Explicit resources
+    # below are merged afterwards, so later duplicates continue to fail instead
+    # of overwriting resources that were already added.
     for parsed_dir in args.parsed_dir:
-        parsed_cores = Path(parsed_dir) / "cores"
-        if parsed_cores.is_dir():
-            copy_tree_contents(parsed_cores, cores_dir)
+        parsed_dir = Path(parsed_dir)
+        for resource_name, destination in resource_dirs.items():
+            source = parsed_dir / resource_name
+            if source.is_dir():
+                copy_tree_contents(source, destination)
 
     for core_entry in args.core:
         name, _, path = core_entry.partition("=")
