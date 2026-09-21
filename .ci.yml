@@ -46,7 +46,7 @@ bazel_rules_example:
   variables:
     SCALENODE_DISK: 20
   before_script:
-    - apt-get update && apt-get install -y curl ca-certificates git
+    - apt-get update && apt-get install -y curl ca-certificates git python3
     - curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64
     - chmod +x /usr/local/bin/bazel
   script:
