@@ -27,6 +27,7 @@ topwrap_library(
 
 topwrap_parse_sources(
     name = "my_stream_ip",
+    emit_interfaces = False,
     libraries = [":my_interfaces"],
     deps = ["//custom_iface:stream_ip_lib"],
 )

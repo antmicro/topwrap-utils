@@ -21,9 +21,13 @@ def _topwrap_parse_sources_impl(ctx):
 
     library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.libraries]
 
+    # topwrap always writes the definitions its frontend emits into interfaces/,
+    # so when they're not wanted parse into a scratch repo and keep only cores/.
+    parse_dir = out if ctx.attr.emit_interfaces else ctx.actions.declare_directory(ctx.attr.name + "_parsed")
+
     args = ctx.actions.args()
     args.add_all(library_dirs, before_each = "--repo", expand_directories = False)
-    args.add("--repo", out.path)
+    args.add("--repo", parse_dir.path)
     args.add("repo")
     args.add("parse")
     args.add("--exists-strategy", ctx.attr.exists_strategy)
@@ -31,7 +35,7 @@ def _topwrap_parse_sources_impl(ctx):
         args.add("--inference")
         args.add_all(ctx.attr.inference_interfaces, before_each = "--inference-interface")
         args.add_all(["{}={}".format(",".join(v), k) for k, v in ctx.attr.inference_groups.items()], before_each = "--grouping-hint")
-    args.add(ctx.attr.name)
+    args.add(parse_dir.basename)
     args.add_all(include_dirs, before_each = "--include")
     args.add_all(src_files)
 
@@ -39,10 +43,20 @@ def _topwrap_parse_sources_impl(ctx):
         executable = ctx.executable._topwrap,
         arguments = [args],
         inputs = depset(library_dirs, transitive = [all_files]),
-        outputs = [out],
+        outputs = [parse_dir],
         mnemonic = "TopwrapParse",
         progress_message = "Parsing IP cores into topwrap library %s" % ctx.attr.name,
     )
+
+    if not ctx.attr.emit_interfaces:
+        ctx.actions.run_shell(
+            command = 'mkdir -p "$2" && if [ -d "$1/cores" ]; then cp -rL "$1/cores" "$2/"; fi',
+            arguments = [parse_dir.path, out.path],
+            inputs = [parse_dir],
+            outputs = [out],
+            mnemonic = "TopwrapKeepCores",
+            progress_message = "Dropping emitted interfaces from %s" % ctx.attr.name,
+        )
 
     verilog_info = make_verilog_info(old_infos = [dep[VerilogInfo] for dep in ctx.attr.deps])
 
@@ -53,7 +67,7 @@ def _topwrap_parse_sources_impl(ctx):
     ]
 
 topwrap_parse_sources = rule(
-    doc = "Parses verilog_library sources into a topwrap library directory (cores/ only).",
+    doc = "Parses verilog_library sources into a topwrap library directory (cores/, plus interface definitions emitted by the frontend unless `emit_interfaces` is False).",
     implementation = _topwrap_parse_sources_impl,
     attrs = {
         "deps": attr.label_list(
@@ -63,6 +77,10 @@ topwrap_parse_sources = rule(
         "libraries": attr.label_list(
             doc = "topwrap_library targets whose interfaces are made available as inference candidates. Not copied into the output.",
             providers = [TopwrapLibraryInfo],
+        ),
+        "emit_interfaces": attr.bool(
+            doc = "Keep the interface definitions the frontend emits (interfaces/). Set to False to ship only cores/, e.g. when you provide the definitions yourself through `libraries` and topwrap_library. Cores that reference a dropped definition are left dangling.",
+            default = True,
         ),
         "exists_strategy": attr.string(
             doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
