@@ -8,6 +8,13 @@ load(":providers.bzl", "TopwrapLibraryInfo")
 
 _TOPWRAP = "//:topwrap"
 
+def _library_dirs(deps):
+    """The library_dir of each dep, plus the libraries those were built against."""
+    return depset(
+        [dep[TopwrapLibraryInfo].library_dir for dep in deps],
+        transitive = [dep[TopwrapLibraryInfo].libraries for dep in deps],
+    )
+
 def _topwrap_parse_sources_impl(ctx):
     out = ctx.actions.declare_directory(ctx.attr.name)
 
@@ -19,7 +26,7 @@ def _topwrap_parse_sources_impl(ctx):
     hdr_files = depset([f for entry in dag_entries for f in entry.hdrs])
     include_dirs = depset([f.dirname for f in hdr_files.to_list()])
 
-    library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.libraries]
+    library_dirs = _library_dirs(ctx.attr.libraries)
 
     # topwrap always writes the definitions its frontend emits into interfaces/,
     # so when they're not wanted parse into a scratch repo and keep only cores/.
@@ -42,7 +49,7 @@ def _topwrap_parse_sources_impl(ctx):
     ctx.actions.run(
         executable = ctx.executable._topwrap,
         arguments = [args],
-        inputs = depset(library_dirs, transitive = [all_files]),
+        inputs = depset(transitive = [library_dirs, all_files]),
         outputs = [parse_dir],
         mnemonic = "TopwrapParse",
         progress_message = "Parsing IP cores into topwrap library %s" % ctx.attr.name,
@@ -62,7 +69,7 @@ def _topwrap_parse_sources_impl(ctx):
 
     return [
         DefaultInfo(files = depset([out])),
-        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag),
+        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag, libraries = library_dirs),
         verilog_info,
     ]
 
@@ -75,7 +82,7 @@ topwrap_parse_sources = rule(
             providers = [VerilogInfo],
         ),
         "libraries": attr.label_list(
-            doc = "topwrap_library targets whose interfaces are made available as inference candidates. Not copied into the output.",
+            doc = "topwrap_library targets whose interfaces are made available as inference candidates. Not copied into the output; consumers of this target (topwrap_library, topwrap_design, topwrap_design_gui) pick them up through TopwrapLibraryInfo.libraries.",
             providers = [TopwrapLibraryInfo],
         ),
         "emit_interfaces": attr.bool(
@@ -140,7 +147,7 @@ def _topwrap_core_impl(ctx):
 
     return [
         DefaultInfo(files = depset([out])),
-        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag),
+        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag, libraries = depset()),
         verilog_info,
     ]
 
@@ -167,7 +174,9 @@ topwrap_core = rule(
 def _topwrap_library_impl(ctx):
     out = ctx.actions.declare_directory(ctx.attr.name)
 
-    parsed_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.cores]
+    # The libraries the cores were built against are merged in too, so the
+    # assembled library is self-contained.
+    parsed_dirs = _library_dirs(ctx.attr.cores)
     interfaces = ctx.files.interfaces
     mappings = ctx.files.mappings
 
@@ -180,7 +189,7 @@ def _topwrap_library_impl(ctx):
     ctx.actions.run(
         executable = ctx.executable._assemble_library,
         arguments = [args],
-        inputs = depset(parsed_dirs + interfaces + mappings),
+        inputs = depset(interfaces + mappings, transitive = [parsed_dirs]),
         outputs = [out],
         mnemonic = "TopwrapAssembleLibrary",
         progress_message = "Assembling topwrap library %s" % ctx.attr.name,
@@ -190,7 +199,7 @@ def _topwrap_library_impl(ctx):
 
     return [
         DefaultInfo(files = depset([out])),
-        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag),
+        TopwrapLibraryInfo(library_dir = out, hdl_dag = hdl_dag, libraries = depset()),
     ]
 
 topwrap_library = rule(
@@ -221,7 +230,7 @@ def _topwrap_design_impl(ctx):
     build_dir = ctx.actions.declare_directory(ctx.attr.name + "_build")
     top_sv = ctx.actions.declare_file(ctx.attr.name + ".sv")
 
-    library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.deps]
+    library_dirs = _library_dirs(ctx.attr.deps)
 
     args = ctx.actions.args()
     args.add_all(library_dirs, before_each = "--repo", expand_directories = False)
@@ -232,7 +241,7 @@ def _topwrap_design_impl(ctx):
     ctx.actions.run(
         executable = ctx.executable._topwrap,
         arguments = [args],
-        inputs = depset([ctx.file.design] + library_dirs),
+        inputs = depset([ctx.file.design], transitive = [library_dirs]),
         outputs = [build_dir],
         mnemonic = "TopwrapBuild",
         progress_message = "Generating top-level design %s" % ctx.attr.name,
@@ -348,7 +357,7 @@ topwrap_gui = rule(
 
 def _topwrap_design_gui_impl(ctx):
     launcher = ctx.actions.declare_file(ctx.label.name)
-    library_dirs = [dep[TopwrapLibraryInfo].library_dir for dep in ctx.attr.deps]
+    library_dirs = _library_dirs(ctx.attr.deps).to_list()
 
     repo_flags = "".join([
         '--repo "$(rlocation %s)" ' % _rlocation_path(ctx, d)

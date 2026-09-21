@@ -35,7 +35,6 @@ topwrap_parse_sources(
 topwrap_library(
     name = "my_stream_library",
     cores = [":my_stream_ip"],
-    interfaces = ["//custom_iface:my_stream.yaml"],
 )
 
 # 3. Generate the top-level wrapper
