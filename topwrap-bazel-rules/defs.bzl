@@ -38,6 +38,7 @@ def _topwrap_parse_sources_impl(ctx):
     args.add("repo")
     args.add("parse")
     args.add("--exists-strategy", ctx.attr.exists_strategy)
+    args.add_all(ctx.attr.modules, before_each = "--module")
     if ctx.attr.inference:
         args.add("--inference")
         args.add_all(ctx.attr.inference_interfaces, before_each = "--inference-interface")
@@ -88,6 +89,9 @@ topwrap_parse_sources = rule(
         "emit_interfaces": attr.bool(
             doc = "Keep the interface definitions the frontend emits (interfaces/). Set to False to ship only cores/, e.g. when you provide the definitions yourself through `libraries` and topwrap_library. Cores that reference a dropped definition are left dangling.",
             default = True,
+        ),
+        "modules": attr.string_list(
+            doc = "Only store modules with these names (or combined vendor:library:name:version ids). Empty stores every module found. All sources are still parsed.",
         ),
         "exists_strategy": attr.string(
             doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
