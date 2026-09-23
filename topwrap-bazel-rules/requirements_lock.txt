@@ -1602,7 +1602,7 @@ starlette==0.41.3 \
     # via fastapi
 # WARNING: pip install will require the following package to be hashed.
 # Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
-topwrap @ git+https://github.com/antmicro/topwrap.git@c1c844fc183d6a2e282abd95c34a3175ce9b2333
+topwrap @ git+https://github.com/antmicro/topwrap.git@a42dc1780b7be0d5021bc664cc11bee1b6794338
     # via -r requirements.in
 # WARNING: pip install will require the following package to be hashed.
 # Consider using a hashable URL like https://github.com/jazzband/pip-tools/archive/SOMECOMMIT.zip
