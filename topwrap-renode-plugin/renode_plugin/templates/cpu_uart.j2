@@ -21,17 +21,22 @@ machine LoadPlatformDescription $platform
 {% if add_mem_mailbox %}
 machine CreateVirtualConsole "mem_mailbox"
 python """
+import threading
 from Antmicro.Renode.Peripherals.Bus import Access, SysbusAccessWidth
 mem_mailbox = monitor.Machine["sysbus.mem_mailbox"]
 bus = monitor.Machine.SystemBus
 
+# Temporarily fix for problem with LoggingUartAnalyzer not being thread safe
+lock = threading.Lock()
+
 def handle_char(_, __, ___, value):
-    if(value not in (0x1, 0xFF) and value < 0xFF):
-        mem_mailbox.DisplayChar(value)
-    else:
-        for x in [ord(c) for c in "\n[[mailbox: Finished, requested simulation end]]"]:
-            mem_mailbox.DisplayChar(x)
-        mem_mailbox.DebugLog("FINISHED")
+    with lock:
+        if(value not in (0x1, 0xFF) and value < 0xFF):
+            mem_mailbox.DisplayChar(value)
+        else:
+            for x in [ord(c) for c in "\n[[mailbox: Finished, requested simulation end]]"]:
+                mem_mailbox.DisplayChar(x)
+            mem_mailbox.DebugLog("FINISHED")
 
 bus.AddWatchpointHook(0x80f80000, SysbusAccessWidth.DoubleWord, Access.Write, handle_char)
 bus.AddWatchpointHook(0x80f80000, SysbusAccessWidth.Byte, Access.Write, handle_char)
