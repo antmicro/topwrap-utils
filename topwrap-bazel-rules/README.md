@@ -11,7 +11,7 @@ IP cores and generate top-level design wrappers. Compatible with
 Add to your `MODULE.bazel`:
 
 ```python
-bazel_dep(name = "rules_python", version = "0.40.0")
+bazel_dep(name = "rules_python", version = "2.4.2")
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 pip.parse(
@@ -24,7 +24,7 @@ use_repo(pip, "pip")
 bazel_dep(name = "rules_hdl")
 git_override(
     module_name = "rules_hdl",
-    commit = "94e28d604085707499fd5aa1fd96519b1acda216",
+    commit = "3998e10bc9506f9f3511427cf421e1fc4a142b0e",
     remote = "https://github.com/hdl/bazel_rules_hdl.git",
 )
 
