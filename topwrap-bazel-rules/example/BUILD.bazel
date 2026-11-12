@@ -63,12 +63,18 @@ pkg_tar(
 # 6. Synthesis + place-and-route (an example consumer)
 
 load("@rules_hdl//place_and_route:build_defs.bzl", "place_and_route")
-load("@rules_hdl//synthesis:defs.bzl", "synthesize_rtl")
+load("@rules_hdl//synthesis:defs.bzl", "sdc_library", "synthesize_rtl")
 
 synthesize_rtl(
     name = "my_design_synth",
     top_module = "top",
     deps = [":my_design"],
+)
+
+# place_and_route only honours `sdc` when the target provides SdcInfo.
+sdc_library(
+    name = "my_design_sdc",
+    srcs = ["my_design.sdc"],
 )
 
 place_and_route(
@@ -78,6 +84,6 @@ place_and_route(
     die_height_microns = 200,
     die_width_microns = 200,
     placement_density = "0.7",
-    sdc = "my_design.sdc",
+    sdc = ":my_design_sdc",
     synthesized_rtl = ":my_design_synth",
 )

@@ -20,7 +20,9 @@ bazel_dep(name = "rules_pkg", version = "1.2.0")
 bazel_dep(name = "rules_hdl")
 git_override(
     module_name = "rules_hdl",
-    commit = "94e28d604085707499fd5aa1fd96519b1acda216",
+    commit = "3998e10bc9506f9f3511427cf421e1fc4a142b0e",
+    patch_strip = 1,
+    patches = ["//patches:rules_hdl_python313.patch"],
     remote = "https://github.com/hdl/bazel_rules_hdl.git",
 )
 
@@ -28,11 +30,11 @@ git_override(
 # providers Bazel 9 removed.
 single_version_override(
     module_name = "rules_cc",
-    version = "0.2.11",
+    version = "0.2.17",
 )
 
 # OpenROAD needs C++20; system gcc defaults to c++17.
-bazel_dep(name = "toolchains_llvm", version = "1.4.0")
+bazel_dep(name = "toolchains_llvm", version = "1.5.0")
 
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
 llvm.toolchain(
@@ -54,22 +56,15 @@ git_override(
 
 git_override(
     module_name = "openroad",
-    commit = "d046747ad39bfc5e032eb5c548ad8dfb441e228b",
+    commit = "51c9638fb0b005e5d60d7216970110543621125c",
     init_submodules = True,
-    patch_strip = 1,
-    patches = ["//dependency_support/openroad:slang_path.patch"],
     remote = "https://github.com/The-OpenROAD-Project/OpenROAD.git",
 )
 
 git_override(
     module_name = "qt-bazel",
-    commit = "886104974c2fd72439f2c33b5deebf0fe4649df7",
+    commit = "90cfbab79df93960c5493f8a75df6199fb80fe26",
     remote = "https://github.com/The-OpenROAD-Project/qt_bazel_prebuilts",
-)
-
-single_version_override(
-    module_name = "rules_pycross",
-    version = "0.8.3",
 )
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")

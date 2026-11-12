@@ -1,0 +1,13 @@
+--- a/MODULE.bazel
++++ b/MODULE.bazel
+@@ -71,3 +71,3 @@
+ python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+-python.toolchain(python_version = "3.14")
+-use_repo(python, "python_3_14")
++python.toolchain(python_version = "3.13")
++use_repo(python, "python_3_13")
+@@ -77,3 +77,3 @@
+     hub_name = "rules_hdl_pip_deps_to_vendor",
+-    python_version = "3.14",
++    python_version = "3.13",
+     requirements_lock = "//dependency_support:pip_requirements.txt",
