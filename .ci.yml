@@ -51,7 +51,7 @@ bazel_rules_example:
     - chmod +x /usr/local/bin/bazel
   script:
     - cd topwrap-bazel-rules/example
-    - bazel build //:my_design
+    - bazel build //...
 
 # Renode plugin
 renode_plugin_lint:

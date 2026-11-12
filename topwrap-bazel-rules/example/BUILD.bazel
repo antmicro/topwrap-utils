@@ -27,6 +27,7 @@ topwrap_library(
 
 topwrap_parse_sources(
     name = "my_stream_ip",
+    modules = ["stream_ip"],
     emit_interfaces = False,
     libraries = [":my_interfaces"],
     deps = ["//custom_iface:stream_ip_lib"],
@@ -44,7 +45,7 @@ topwrap_design(
     deps = [":my_library"],
 )
 
-# 4. bazel run //example:my_design_gui - opens the GUI on this design.
+# 4. bazel run //:my_design_gui - opens the GUI on this design.
 topwrap_design_gui(
     name = "my_design_gui",
     design = "design.yaml",
@@ -67,6 +68,7 @@ load("@rules_hdl//synthesis:defs.bzl", "sdc_library", "synthesize_rtl")
 
 synthesize_rtl(
     name = "my_design_synth",
+    tags = ["manual"],
     top_module = "top",
     deps = [":my_design"],
 )
@@ -79,6 +81,7 @@ sdc_library(
 
 place_and_route(
     name = "my_design_pnr",
+    tags = ["manual"],
     clock_period = "10",
     core_padding_microns = 20,
     die_height_microns = 200,

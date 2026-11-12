@@ -3,9 +3,15 @@ id:
   name: my_stream
   vendor: antmicro
 signals:
-  required:
-    in:
-      READY: ready
-    out:
-      DATA: data
-      VALID: valid
+  READY:
+    pattern: ready
+    modes:
+      manager: [in, required]
+  DATA:
+    pattern: data
+    modes:
+      manager: [out, required]
+  VALID:
+    pattern: valid
+    modes:
+      manager: [out, required]
