@@ -9,7 +9,7 @@ load(":providers.bzl", "TopwrapLibraryInfo")
 _TOPWRAP = "//:topwrap"
 
 def _library_dirs(deps):
-    """The library_dir of each dep, plus the libraries those were built against."""
+    """Collect library directories and their transitive dependencies."""
     return depset(
         [dep[TopwrapLibraryInfo].library_dir for dep in deps],
         transitive = [dep[TopwrapLibraryInfo].libraries for dep in deps],
@@ -28,8 +28,7 @@ def _topwrap_parse_sources_impl(ctx):
 
     library_dirs = _library_dirs(ctx.attr.libraries)
 
-    # topwrap always writes the definitions its frontend emits into interfaces/,
-    # so when they're not wanted parse into a scratch repo and keep only cores/.
+    # The parser always emits interfaces; filter them in a separate action.
     parse_dir = out if ctx.attr.emit_interfaces else ctx.actions.declare_directory(ctx.attr.name + "_parsed")
 
     args = ctx.actions.args()
@@ -75,7 +74,7 @@ def _topwrap_parse_sources_impl(ctx):
     ]
 
 topwrap_parse_sources = rule(
-    doc = "Parses verilog_library sources into a topwrap library directory (cores/, plus interface definitions emitted by the frontend unless `emit_interfaces` is False).",
+    doc = "Parse HDL sources into a Topwrap library.",
     implementation = _topwrap_parse_sources_impl,
     attrs = {
         "deps": attr.label_list(
@@ -83,15 +82,15 @@ topwrap_parse_sources = rule(
             providers = [VerilogInfo],
         ),
         "libraries": attr.label_list(
-            doc = "topwrap_library targets whose interfaces are made available as inference candidates. Not copied into the output; consumers of this target (topwrap_library, topwrap_design, topwrap_design_gui) pick them up through TopwrapLibraryInfo.libraries.",
+            doc = "Interface libraries used for inference and propagated to consumers.",
             providers = [TopwrapLibraryInfo],
         ),
         "emit_interfaces": attr.bool(
-            doc = "Keep the interface definitions the frontend emits (interfaces/). Set to False to ship only cores/, e.g. when you provide the definitions yourself through `libraries` and topwrap_library. Cores that reference a dropped definition are left dangling.",
+            doc = "Include interface definitions emitted by the parser.",
             default = True,
         ),
         "modules": attr.string_list(
-            doc = "Only store modules with these names (or combined vendor:library:name:version ids). Empty stores every module found. All sources are still parsed.",
+            doc = "Modules to export by name or VLNV identifier; empty selects all.",
         ),
         "exists_strategy": attr.string(
             doc = "How to behave when a parsed resource (e.g. an inferred interface) already exists in the library.",
@@ -178,8 +177,7 @@ topwrap_core = rule(
 def _topwrap_library_impl(ctx):
     out = ctx.actions.declare_directory(ctx.attr.name)
 
-    # The libraries the cores were built against are merged in too, so the
-    # assembled library is self-contained.
+    # Include inference libraries in the assembled library.
     parsed_dirs = _library_dirs(ctx.attr.cores)
     interfaces = ctx.files.interfaces
     mappings = ctx.files.mappings

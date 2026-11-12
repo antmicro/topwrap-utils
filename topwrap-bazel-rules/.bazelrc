@@ -1,1 +1,2 @@
+# Required by OpenROAD's isolated npm extension.
 common --experimental_isolated_extension_usages

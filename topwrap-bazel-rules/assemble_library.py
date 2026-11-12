@@ -44,18 +44,13 @@ def main() -> int:
     interfaces_dir = out_dir / "interfaces"
     mappings_dir = out_dir / "mappings"
 
-    # The same interface library can reach a library through several paths
-    # (each parse target that used it, plus libraries that already merged it),
-    # so identical interface and mapping files are not duplicates.
+    # Dependencies may share identical interface and mapping files.
     resource_dirs = {
         "cores": (cores_dir, False),
         "interfaces": (interfaces_dir, True),
         "mappings": (mappings_dir, True),
     }
 
-    # Merge provider directories first, in command-line order. Explicit resources
-    # below are merged afterwards, so later duplicates continue to fail instead
-    # of overwriting resources that were already added.
     for parsed_dir in args.parsed_dir:
         parsed_dir = Path(parsed_dir)
         for resource_name, (destination, allow_identical) in resource_dirs.items():

@@ -19,7 +19,7 @@ topwrap_library(
     ],
 )
 
-# 2b. Infer interfaces on a core using a user-provided interface definition.
+# 2b. Infer a custom interface.
 topwrap_library(
     name = "my_interfaces",
     interfaces = ["//custom_iface:my_stream.yaml"],
@@ -45,7 +45,7 @@ topwrap_design(
     deps = [":my_library"],
 )
 
-# 4. bazel run //:my_design_gui - opens the GUI on this design.
+# 4. Open the design in the GUI.
 topwrap_design_gui(
     name = "my_design_gui",
     design = "design.yaml",
@@ -73,7 +73,6 @@ synthesize_rtl(
     deps = [":my_design"],
 )
 
-# place_and_route only honours `sdc` when the target provides SdcInfo.
 sdc_library(
     name = "my_design_sdc",
     srcs = ["my_design.sdc"],

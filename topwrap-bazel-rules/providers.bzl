@@ -8,6 +8,6 @@ TopwrapLibraryInfo = provider(
     fields = {
         "library_dir": "Directory artifact holding the assembled library (topwrap repo).",
         "hdl_dag": "depset of VerilogInfo DAG entries from the real HDL this library's cores were parsed from.",
-        "libraries": "depset of library directories that library_dir depends on but does not contain, e.g. the interface libraries its cores were parsed against. Consumers add them next to library_dir.",
+        "libraries": "depset of additional library directories required by this library.",
     },
 )
